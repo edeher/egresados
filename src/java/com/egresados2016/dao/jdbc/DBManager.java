@@ -23,7 +23,7 @@ import java.sql.SQLException;
 
   public class DBManager {    
     
-    static private final String url="jdbc:mysql://localhost:3306/reposiunia";
+    static private final String url="jdbc:mysql://localhost:3306/egresados";
     static private final String driver="com.mysql.jdbc.Driver";
     static private final String user="root";
     static private final String pass="poderoso";

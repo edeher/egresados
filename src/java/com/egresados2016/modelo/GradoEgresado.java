@@ -6,6 +6,7 @@
 package com.egresados2016.modelo;
 
 import com.egresados2016.enums.Estados;
+import java.sql.Date;
 
 /**
  *
@@ -15,25 +16,28 @@ public class GradoEgresado {
     private int idGradoEgresado;
     private Grados grados;
     private Egresado egresado;
+    private Date fecha;
     private Estados estado;
 
     public GradoEgresado() {
-        this.grados=new Grados();
         this.egresado=new Egresado();
+        this.grados=new Grados();
     }
 
-    public GradoEgresado(int idGradoEgresado, Grados grados, Egresado egresado, Estados estado) {
+    public GradoEgresado(int idGradoEgresado, Grados grados, Egresado egresado, Date fecha, Estados estado) {
         this.idGradoEgresado = idGradoEgresado;
         this.grados = grados;
         this.egresado = egresado;
+        this.fecha = fecha;
         this.estado = estado;
     }
 
     @Override
     public String toString() {
-        return "GradoEgresado{" + "idGradoEgresado=" + idGradoEgresado + ", grados=" + grados + ", egresado=" + egresado + ", estado=" + estado + '}';
+        return "GradoEgresado{" + "idGradoEgresado=" + idGradoEgresado + ", grados=" + grados + ", egresado=" + egresado + ", fecha=" + fecha + ", estado=" + estado + '}';
     }
 
+    
     
     /**
      * @return the idGradoEgresado
@@ -78,6 +82,20 @@ public class GradoEgresado {
     }
 
     /**
+     * @return the fecha
+     */
+    public Date getFecha() {
+        return fecha;
+    }
+
+    /**
+     * @param fecha the fecha to set
+     */
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    /**
      * @return the estado
      */
     public Estados getEstado() {
@@ -90,4 +108,6 @@ public class GradoEgresado {
     public void setEstado(Estados estado) {
         this.estado = estado;
     }
+
+   
 }

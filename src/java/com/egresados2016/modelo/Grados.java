@@ -16,27 +16,26 @@ public class Grados {
    private int idGrado;
    private Escuela escuela;
    private String descripcion;
-   private Date fecha;
    private Estados estado;
 
     public Grados() {
         this.escuela=new Escuela();
     }
 
-    public Grados(int idGrado, Escuela escuela, String descripcion, Date fecha, Estados estado) {
+    public Grados(int idGrado, Escuela escuela, String descripcion, Estados estado) {
         this.idGrado = idGrado;
         this.escuela = escuela;
         this.descripcion = descripcion;
-        this.fecha = fecha;
         this.estado = estado;
     }
 
     @Override
     public String toString() {
-        return "Grados{" + "idGrado=" + idGrado + ", escuela=" + escuela + ", descripcion=" + descripcion + ", fecha=" + fecha + ", estado=" + estado + '}';
+        return "Grados{" + "idGrado=" + idGrado + ", escuela=" + escuela + ", descripcion=" + descripcion + ", estado=" + estado + '}';
     }
-
    
+   
+
     /**
      * @return the idGrado
      */
@@ -80,20 +79,6 @@ public class Grados {
     }
 
     /**
-     * @return the fecha
-     */
-    public Date getFecha() {
-        return fecha;
-    }
-
-    /**
-     * @param fecha the fecha to set
-     */
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    /**
      * @return the estado
      */
     public Estados getEstado() {
@@ -106,4 +91,5 @@ public class Grados {
     public void setEstado(Estados estado) {
         this.estado = estado;
     }
+
 }
