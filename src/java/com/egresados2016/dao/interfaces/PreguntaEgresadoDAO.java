@@ -5,10 +5,20 @@
  */
 package com.egresados2016.dao.interfaces;
 
+import com.egresados2016.dao.jdbc.DAOException;
+import com.egresados2016.modelo.PreguntaEgresado;
+
 /**
  *
  * @author Mi Laptop
  */
 public interface PreguntaEgresadoDAO {
-    
+    public  PreguntaEgresado crear( PreguntaEgresado objPreE) throws DAOException;//asocia la excepcion para usar las ecepciones
+    public  PreguntaEgresado  modificar( PreguntaEgresado objPreE)throws DAOException;
+    public  PreguntaEgresado leerxid ( PreguntaEgresado objPreE)throws DAOException;
+    public  PreguntaEgresado[] leertodo()throws DAOException;
+    public  PreguntaEgresado[] leertodo(int idPreguntaEgresado)throws DAOException;
+     public  PreguntaEgresado[] leertodo( PreguntaEgresado objPreE)throws DAOException;
+    public boolean eliminar( PreguntaEgresado objPreE)throws DAOException;
+    public boolean destruir( PreguntaEgresado objPreE)throws DAOException;
 }

@@ -5,42 +5,52 @@
  */
 package com.egresados2016.dao.jdbc;
 
-import com.egresados2016.dao.interfaces.RespuestaDAO;
-import com.egresados2016.modelo.Respuesta;
+import com.egresados2016.dao.interfaces.PreguntaEgresadoDAO;
+import com.egresados2016.modelo.PreguntaEgresado;
 
 /**
  *
  * @author Mi Laptop
  */
-public class RespuestaDAOJDBC implements RespuestaDAO{
+public class PreguntaEgresadoDAOJDBC implements PreguntaEgresadoDAO{
 
     @Override
-    public Respuesta crear(Respuesta objRe) throws DAOException {
+    public PreguntaEgresado crear(PreguntaEgresado objPreE) throws DAOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Respuesta modificar(Respuesta objRe) throws DAOException {
+    public PreguntaEgresado modificar(PreguntaEgresado objPreE) throws DAOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Respuesta leerxid(Respuesta objRe) throws DAOException {
+    public PreguntaEgresado leerxid(PreguntaEgresado objPreE) throws DAOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Respuesta[] leertodo() throws DAOException {
+    public PreguntaEgresado[] leertodo() throws DAOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean eliminar(Respuesta objRe) throws DAOException {
+    public PreguntaEgresado[] leertodo(int idPreguntaEgresado) throws DAOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean destruir(Respuesta objRe) throws DAOException {
+    public PreguntaEgresado[] leertodo(PreguntaEgresado objPreE) throws DAOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean eliminar(PreguntaEgresado objPreE) throws DAOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean destruir(PreguntaEgresado objPreE) throws DAOException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

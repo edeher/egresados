@@ -15,9 +15,10 @@ import com.egresados2016.modelo.Facultad;
  * @author Mi Laptop
  */
 public interface FacultadDAO {
-     public boolean crear( Facultad objFa) throws DAOException;//asocia la excepcion para usar las ecepciones
-    public boolean modificar(Facultad objFa)throws DAOException;
-    public boolean eliminar(int idFacultad)throws DAOException;
-    public Facultad leerxid (int idFacultad)throws DAOException;
-    public Facultad[] leertodo()throws DAOException;
+     public Facultad crear(Facultad objFa)throws DAOException;
+    public Facultad modificar (Facultad objFa)throws DAOException;
+    public Facultad leerxid(Facultad objFa)throws DAOException;
+    public Facultad []leertodo()throws DAOException;
+    public boolean eliminar (Facultad objFa)throws DAOException;
+    public boolean destruir(Facultad objFa)throws DAOException;
 }

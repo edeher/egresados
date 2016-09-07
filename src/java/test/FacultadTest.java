@@ -57,28 +57,8 @@ public class FacultadTest {
                
            
     }
-    public static void eliminarfacultad() throws DAOException
-    {
-        FacultadDAOFactory fabricate= new FacultadDAOFactory();
-        FacultadDAO daote= fabricate.metodoDAO();
-          int idFacultad=2;
-              
-              daote.eliminar(idFacultad);
-               
-           
-    }
-     public static void leer() throws DAOException
-    {
-        FacultadDAOFactory fabricate= new FacultadDAOFactory();
-        FacultadDAO daote= fabricate.metodoDAO();
-          int idFacultad=2;
-              
-             Facultad fau= daote.leerxid(idFacultad);
-              System.out.println(" "+fau.toString());
-              
-               
-           
-    }
+   
+   
      public static void leertodo() throws DAOException
     {
         FacultadDAOFactory fabricate= new FacultadDAOFactory();

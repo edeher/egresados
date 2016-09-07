@@ -5,10 +5,16 @@
  */
 package com.egresados2016.dao.factory;
 
+import com.egresados2016.dao.interfaces.GradosDAO;
+import com.egresados2016.dao.jdbc.GradosDAOJDBC;
+
 /**
  *
  * @author Mi Laptop
  */
 public class GradosDAOFactory {
-    
+            public GradosDAO metodoDAO()
+   {
+    return new GradosDAOJDBC();
+   }
 }

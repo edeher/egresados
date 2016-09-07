@@ -5,10 +5,16 @@
  */
 package com.egresados2016.dao.factory;
 
+import com.egresados2016.dao.interfaces.DepartamentoDAO;
+import com.egresados2016.dao.jdbc.DepartamentoDAOJDBC;
+
 /**
  *
  * @author Mi Laptop
  */
 public class DepartamentoDAOFactory {
-    
+     public DepartamentoDAO metodoDAO()
+   {
+    return new DepartamentoDAOJDBC();
+   }
 }

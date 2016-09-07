@@ -5,10 +5,16 @@
  */
 package com.egresados2016.dao.factory;
 
+import com.egresados2016.dao.interfaces.PreguntaDAO;
+import com.egresados2016.dao.jdbc.PreguntaDAOJDBC;
+
 /**
  *
  * @author Mi Laptop
  */
 public class PreguntaDAOFactory {
-    
+             public PreguntaDAO metodoDAO()
+   {
+    return new PreguntaDAOJDBC();
+   }
 }

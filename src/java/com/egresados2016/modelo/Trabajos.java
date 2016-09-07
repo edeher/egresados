@@ -7,6 +7,7 @@ package com.egresados2016.modelo;
 
 import com.egresados2016.enums.Estados;
 import com.egresados2016.enums.TipoContrato;
+import com.egresados2016.enums.TipoJornada;
 import java.sql.Date;
 
 /**
@@ -15,21 +16,20 @@ import java.sql.Date;
  */
 public class Trabajos {
     private int idTrabajos;
-   private Egresado egresado;
+    private Egresado egresado;
     private Date fechaInicio;
     private Date fechaFin;
     private String puesto;
     private String nomInstitucion;
     private TipoContrato tipocontrato;
     private String sueldo;
-    private String tipoTiempo;
+    private TipoJornada tipojornada;
     private Estados estado;
 
     public Trabajos() {
-        this.egresado=new Egresado();
     }
 
-    public Trabajos(int idTrabajos, Egresado egresado, Date fechaInicio, Date fechaFin, String puesto, String nomInstitucion, TipoContrato tipocontrato, String sueldo, String tipoTiempo, Estados estado) {
+    public Trabajos(int idTrabajos, Egresado egresado, Date fechaInicio, Date fechaFin, String puesto, String nomInstitucion, TipoContrato tipocontrato, String sueldo, TipoJornada tipojornada, Estados estado) {
         this.idTrabajos = idTrabajos;
         this.egresado = egresado;
         this.fechaInicio = fechaInicio;
@@ -38,17 +38,17 @@ public class Trabajos {
         this.nomInstitucion = nomInstitucion;
         this.tipocontrato = tipocontrato;
         this.sueldo = sueldo;
-        this.tipoTiempo = tipoTiempo;
+        this.tipojornada = tipojornada;
         this.estado = estado;
     }
 
     @Override
     public String toString() {
-        return "Trabajos{" + "idTrabajos=" + idTrabajos + ", egresado=" + egresado + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", puesto=" + puesto + ", nomInstitucion=" + nomInstitucion + ", tipocontrato=" + tipocontrato + ", sueldo=" + sueldo + ", tipoTiempo=" + tipoTiempo + ", estado=" + estado + '}';
+        return "Trabajos{" + "idTrabajos=" + idTrabajos + ", egresado=" + egresado + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", puesto=" + puesto + ", nomInstitucion=" + nomInstitucion + ", tipocontrato=" + tipocontrato + ", sueldo=" + sueldo + ", tipojornada=" + tipojornada + ", estado=" + estado + '}';
     }
+    
+    
 
-    
-    
     /**
      * @return the idTrabajos
      */
@@ -162,17 +162,17 @@ public class Trabajos {
     }
 
     /**
-     * @return the tipoTiempo
+     * @return the tipojornada
      */
-    public String getTipoTiempo() {
-        return tipoTiempo;
+    public TipoJornada getTipojornada() {
+        return tipojornada;
     }
 
     /**
-     * @param tipoTiempo the tipoTiempo to set
+     * @param tipojornada the tipojornada to set
      */
-    public void setTipoTiempo(String tipoTiempo) {
-        this.tipoTiempo = tipoTiempo;
+    public void setTipojornada(TipoJornada tipojornada) {
+        this.tipojornada = tipojornada;
     }
 
     /**
@@ -188,8 +188,8 @@ public class Trabajos {
     public void setEstado(Estados estado) {
         this.estado = estado;
     }
-    
 
+   
     
             
 }

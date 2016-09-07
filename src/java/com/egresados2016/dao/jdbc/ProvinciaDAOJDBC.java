@@ -5,10 +5,43 @@
  */
 package com.egresados2016.dao.jdbc;
 
+import com.egresados2016.dao.interfaces.ProvinciaDAO;
+import com.egresados2016.modelo.Provincia;
+
 /**
  *
  * @author Mi Laptop
  */
-public class ProvinciaDAOJDBC {
+public class ProvinciaDAOJDBC implements ProvinciaDAO{
+
+    @Override
+    public Provincia crear(Provincia objPro) throws DAOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Provincia modificar(Provincia objPro) throws DAOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Provincia leerxid(Provincia objPro) throws DAOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Provincia[] leertodo() throws DAOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean eliminar(Provincia objPro) throws DAOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean destruir(Provincia objPro) throws DAOException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

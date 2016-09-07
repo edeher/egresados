@@ -25,7 +25,7 @@ public class EscuelaTest {
         // TODO code application logic here
 //        crearescuela();
 //        modificarescuela();
-        leer();
+       
 //        leertodo();
 //        leertodoFacultad();
     }
@@ -56,26 +56,8 @@ public class EscuelaTest {
                
            
     }
-     public static void eliminardenuncia() throws DAOException
-    {
-          EscuelaDAOFactory fabricate= new  EscuelaDAOFactory();
-          EscuelaDAO daote= fabricate.metodoDAO();
-          int idEscuela=1;
-              
-              daote.eliminar(idEscuela);
+     
    
-    }
-     public static void leer()throws DAOException
-	{
-		  EscuelaDAOFactory fabricate= new  EscuelaDAOFactory();
-                 EscuelaDAO daote= fabricate.metodoDAO();
-       
-               
-	  Escuela objEs=daote.leerxid(3);
-	 System.out.println(" "+objEs.toString());
-        
-	    
-	}
       public static void leertodo()throws DAOException
 	{
 		  EscuelaDAOFactory fabricate= new  EscuelaDAOFactory();
@@ -90,18 +72,5 @@ public class EscuelaTest {
 	  }
 	 
         } 
-      public static void leertodoFacultad()throws DAOException
-	{
-		  EscuelaDAOFactory fabricate= new  EscuelaDAOFactory();
-                  EscuelaDAO daote= fabricate.metodoDAO();
-	 Escuela[] usuv=daote.leertodo(2);
-	  
-	  for(Escuela usuv1:usuv)
-	  {
-	      
-	      System.out.println(" "+usuv1.toString());
-	  
-	  }
-	 
-        } 
+     
 }

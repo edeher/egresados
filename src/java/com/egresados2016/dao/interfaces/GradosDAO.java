@@ -5,10 +5,18 @@
  */
 package com.egresados2016.dao.interfaces;
 
+import com.egresados2016.dao.jdbc.DAOException;
+import com.egresados2016.modelo.Grados;
+
 /**
  *
  * @author Mi Laptop
  */
 public interface GradosDAO {
-    
+    public Grados crear(Grados objGr)throws DAOException;
+    public Grados modificar (Grados objGr)throws DAOException;
+    public Grados leerxid(Grados objGr)throws DAOException;
+    public Grados []leertodo()throws DAOException;
+    public boolean eliminar (Grados objGr)throws DAOException;
+    public boolean destruir(Grados objGr)throws DAOException;
 }

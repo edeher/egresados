@@ -5,10 +5,18 @@
  */
 package com.egresados2016.dao.interfaces;
 
+import com.egresados2016.dao.jdbc.DAOException;
+import com.egresados2016.modelo.Egresado;
+
 /**
  *
  * @author Mi Laptop
  */
 public interface EgresadoDAO {
-    
+    public Egresado crear(Egresado objE)throws DAOException;
+    public Egresado modificar (Egresado objE)throws DAOException;
+    public Egresado leerxid(Egresado objE)throws DAOException;
+    public Egresado []leertodo()throws DAOException;
+    public boolean eliminar (Egresado objE)throws DAOException;
+    public boolean destruir(Egresado objE)throws DAOException;
 }

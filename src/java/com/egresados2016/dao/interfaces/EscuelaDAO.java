@@ -15,10 +15,11 @@ import com.egresados2016.modelo.Escuela;
  * @author Mi Laptop
  */
 public interface EscuelaDAO {
-    public boolean crear( Escuela objEs) throws DAOException;//asocia la excepcion para usar las ecepciones
-    public boolean modificar(Escuela objEs)throws DAOException;
-    public boolean eliminar(int idEscuela)throws DAOException;
-    public Escuela leerxid (int idEscuela)throws DAOException;
+    public Escuela  crear( Escuela objEs) throws DAOException;//asocia la excepcion para usar las ecepciones
+    public Escuela  modificar(Escuela objEs)throws DAOException;
+    public Escuela leerxid (Escuela objEs)throws DAOException;
     public Escuela[] leertodo()throws DAOException;
-    public Escuela[] leertodo(int idFacultad)throws DAOException;
+    public Escuela[] leertodo(Escuela objEs)throws DAOException;
+    public boolean eliminar(Escuela objEs)throws DAOException;
+    public boolean destruir(Escuela objEs)throws DAOException;
 }

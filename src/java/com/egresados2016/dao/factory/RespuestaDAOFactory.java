@@ -5,10 +5,16 @@
  */
 package com.egresados2016.dao.factory;
 
+import com.egresados2016.dao.interfaces.RespuestaDAO;
+import com.egresados2016.dao.jdbc.RespuestaDAOJDBC;
+
 /**
  *
  * @author Mi Laptop
  */
 public class RespuestaDAOFactory {
-    
+                public RespuestaDAO metodoDAO()
+   {
+    return new RespuestaDAOJDBC();
+   }
 }

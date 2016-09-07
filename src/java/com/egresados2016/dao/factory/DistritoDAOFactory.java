@@ -5,10 +5,16 @@
  */
 package com.egresados2016.dao.factory;
 
+import com.egresados2016.dao.interfaces.DistritoDAO;
+import com.egresados2016.dao.jdbc.DistritoDAOJDBC;
+
 /**
  *
  * @author Mi Laptop
  */
 public class DistritoDAOFactory {
-    
+      public DistritoDAO metodoDAO()
+   {
+    return new DistritoDAOJDBC();
+   }
 }
