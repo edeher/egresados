@@ -8,7 +8,7 @@ package com.egresados2016.modelo;
 import com.egresados2016.enums.Estados;
 import com.egresados2016.enums.TipoContrato;
 import com.egresados2016.enums.TipoJornada;
-import java.sql.Date;
+import java.util.Date;
 
 /**
  *

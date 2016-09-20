@@ -13,7 +13,7 @@ import java.sql.Date;
  * @author Mi Laptop
  */
 public class Grados {
-   private int idGrado;
+   private int idGrados;
    private Escuela escuela;
    private String descripcion;
    private Estados estado;
@@ -23,7 +23,7 @@ public class Grados {
     }
 
     public Grados(int idGrado, Escuela escuela, String descripcion, Estados estado) {
-        this.idGrado = idGrado;
+        this.idGrados = idGrado;
         this.escuela = escuela;
         this.descripcion = descripcion;
         this.estado = estado;
@@ -31,23 +31,23 @@ public class Grados {
 
     @Override
     public String toString() {
-        return "Grados{" + "idGrado=" + idGrado + ", escuela=" + escuela + ", descripcion=" + descripcion + ", estado=" + estado + '}';
+        return "Grados{" + "idGrado=" + idGrados + ", escuela=" + escuela + ", descripcion=" + descripcion + ", estado=" + estado + '}';
     }
    
    
 
     /**
-     * @return the idGrado
+     * @return the idGrados
      */
-    public int getIdGrado() {
-        return idGrado;
+    public int getIdGrados() {
+        return idGrados;
     }
 
     /**
-     * @param idGrado the idGrado to set
+     * @param idGrados the idGrados to set
      */
-    public void setIdGrado(int idGrado) {
-        this.idGrado = idGrado;
+    public void setIdGrados(int idGrados) {
+        this.idGrados = idGrados;
     }
 
     /**

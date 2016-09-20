@@ -6,7 +6,7 @@
 package com.egresados2016.modelo;
 
 import com.egresados2016.enums.Estados;
-import java.sql.Date;
+import java.util.Date;
 
 /**
  *
@@ -14,7 +14,9 @@ import java.sql.Date;
  */
 public class Estudios {
     private int idEstudios;
+    
     private Egresado egresado;
+    
     private String mencion;
     private String institucion;
     private Date fechaInicio;

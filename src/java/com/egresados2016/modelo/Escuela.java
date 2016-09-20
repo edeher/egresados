@@ -17,6 +17,24 @@ public class Escuela {
     private String descripcion;
     private Estados estado;
 
+    public Escuela() {
+        this.facultad=new Facultad();
+    }
+
+    public Escuela(int idEscuela, Facultad facultad, String descripcion, Estados estado) {
+        this.idEscuela = idEscuela;
+        this.facultad = facultad;
+        this.descripcion = descripcion;
+        this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return "Escuela{" + "idEscuela=" + idEscuela + ", facultad=" + facultad + ", descripcion=" + descripcion + ", estado=" + estado + '}';
+    }
+    
+    
+
     /**
      * @return the idEscuela
      */
@@ -73,37 +91,4 @@ public class Escuela {
         this.estado = estado;
     }
 
-    public Escuela(int idEscuela, Facultad facultad, String descripcion, Estados estado) {
-        this.idEscuela = idEscuela;
-        this.facultad = facultad;
-        this.descripcion = descripcion;
-        this.estado = estado;
-    }
-
-    public Escuela() {
-        this.facultad=new Facultad();
-    }
-
-    public Escuela(int idEscuela, Facultad facultad, String descripcion) {
-        this.idEscuela = idEscuela;
-        this.facultad = facultad;
-        this.descripcion = descripcion;
-    }
-
-    public Escuela(int idEscuela) {
-        this.idEscuela = idEscuela;
-    }
-
-    public Escuela(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    @Override
-    public String toString() {
-        return "Escuela{" + "idEscuela=" + idEscuela + ", facultad=" + facultad + ", descripcion=" + descripcion +  '}';
-    }
-
-   
-   
-    
 }

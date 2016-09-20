@@ -23,54 +23,114 @@ public class EscuelaTest {
      */
     public static void main(String[] args) throws DAOException{
         // TODO code application logic here
-//        crearescuela();
-//        modificarescuela();
-       
-//        leertodo();
-//        leertodoFacultad();
+                //crear();
+                //modificar();
+//                leerxid();
+//                leertodo2();
+//                leertodoxidFacultad();
+//                eliminar();
+                destruir();
     }
-     public static void crearescuela() throws DAOException
-    {
-        EscuelaDAOFactory fabricate= new  EscuelaDAOFactory();
-         EscuelaDAO daote= fabricate.metodoDAO();
-         Escuela objEs=new Escuela();
-         
-          objEs.getFacultad().setIdFacultad(1);
-             objEs.setDescripcion("educaion secundaria");
-              
-              daote.crear(objEs);
-               
-           
-    }
-     public static void modificarescuela() throws DAOException
-    {
-        EscuelaDAOFactory fabricate= new  EscuelaDAOFactory();
-         EscuelaDAO daote= fabricate.metodoDAO();
-         Escuela objEs=new Escuela();
-          
-             objEs.setIdEscuela(5);
-             objEs.getFacultad().setIdFacultad(1);
-             objEs.setDescripcion("educaion secundaria bilingüexxxxx");
-              
-              daote.modificar(objEs);
-               
-           
-    }
-     
-   
-      public static void leertodo()throws DAOException
+     public static void crear() throws DAOException
 	{
-		  EscuelaDAOFactory fabricate= new  EscuelaDAOFactory();
-                  EscuelaDAO daote= fabricate.metodoDAO();
-	 Escuela[] usuv=daote.leertodo();
+		EscuelaDAOFactory fabricate= new EscuelaDAOFactory();
+                EscuelaDAO daote= fabricate.metodoDAO();
+                
+		Escuela objEs= new Escuela();
+                 objEs.getFacultad().setIdFacultad(1);
+		 objEs.setDescripcion("moralesss");
+              
+                 Escuela escu=daote.crear(objEs);
+	 System.out.println(" "+escu.toString());
+		
+		}
+     public static void modificar() throws DAOException
+    {
+		EscuelaDAOFactory fabricate= new EscuelaDAOFactory();
+                EscuelaDAO daote= fabricate.metodoDAO();
+                
+		Escuela objEs= new Escuela();
+                objEs.setIdEscuela(1);
+                objEs.getFacultad().setIdFacultad(2);
+		 objEs.setDescripcion("edeherrrr");
+              
+                
+              
+                
+                 Escuela escu=daote.modificar(objEs);
+	 System.out.println(" "+escu.toString());
+		
+		}
+    
+       public static void leerxid()throws DAOException
+	{
+		EscuelaDAOFactory fabricate= new EscuelaDAOFactory();
+                EscuelaDAO daote= fabricate.metodoDAO();
+                
+		Escuela objFa= new Escuela();
+		 objFa.setIdEscuela(2);
+              
+                
+              
+                
+                Escuela escu=daote.leerxid(objFa);
+	 System.out.println(" "+escu.toString());
+		
+		}
+      public static void leertodoxidFacultad()throws DAOException
+	{
+		EscuelaDAOFactory fabricate= new EscuelaDAOFactory();
+                EscuelaDAO daote= fabricate.metodoDAO();
+                Escuela objEs= new Escuela();
+		 objEs.getFacultad().setIdFacultad(2);
+	 Escuela[] escu=daote.leertodo(objEs);
 	  
-	  for(Escuela usuv1:usuv)
+	  for(Escuela escu1:escu)
 	  {
 	      
-	      System.out.println(" "+usuv1.toString());
+	      System.out.println(" "+escu1.toString());
 	  
 	  }
 	 
-        } 
+        }
+       public static void leertodo2()throws DAOException
+	{
+		EscuelaDAOFactory fabricate= new EscuelaDAOFactory();
+                EscuelaDAO daote= fabricate.metodoDAO();
+       
+	 Escuela[] escu=daote.leertodo();
+	  
+	  for(Escuela escu1:escu)
+	  {
+	      
+	      System.out.println(" "+escu1.toString());
+	  
+	  }
+	 
+        }
+       public static void eliminar()throws DAOException
+	{
+		 EscuelaDAOFactory fabricate= new  EscuelaDAOFactory();
+                 EscuelaDAO daote= fabricate.metodoDAO();
+                 Escuela objEs= new  Escuela();
+		 objEs.setIdEscuela(2);
+                
+	 daote.eliminar(objEs);
+	 System.out.println("se elimino correctamente");
+	 
+	    
+	}
+        public static void destruir()throws DAOException
+	{
+		 EscuelaDAOFactory fabricate= new  EscuelaDAOFactory();
+                 EscuelaDAO daote= fabricate.metodoDAO();
+                 Escuela objEs= new  Escuela();
+		 objEs.setIdEscuela(3);
+                
+	 daote.destruir(objEs);
+	 System.out.println("se destruyo correctamente");
+	 
+	    
+	}
      
 }

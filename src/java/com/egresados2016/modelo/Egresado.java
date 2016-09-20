@@ -8,7 +8,7 @@ package com.egresados2016.modelo;
 import com.egresados2016.enums.Sexo;
 import com.egresados2016.enums.Estados;
 import com.egresados2016.enums.EstadoCivil;
-import java.sql.Date;
+import java.util.Date;
 
 /**
  *
@@ -16,10 +16,12 @@ import java.sql.Date;
  */
 public class Egresado {
      private int idEgresado;
-     private Distrito idDistritoNacimiento;
-     private Distrito idDistritoResidencia;
+     private Distrito DistritoNacimiento;
+     private Distrito DistritoResidencia;
      private String nombres;
      private String apellidos;
+     private Date fechaNac;
+     private int edad;
      private String dni;
      private Sexo sexo;
      private String direccion;
@@ -33,16 +35,18 @@ public class Egresado {
      private Estados estado;
 
     public Egresado() {
-        this.idDistritoNacimiento= new Distrito();
-        this.idDistritoResidencia=new Distrito();
+        this.DistritoNacimiento= new Distrito();
+        this.DistritoResidencia=new Distrito();
     }
 
-    public Egresado(int idEgresado, Distrito idDistritoNacimiento, Distrito idDistritoResidencia, String nombres, String apellidos, String dni, Sexo sexo, String direccion, String telefono1, String telefono2, String correro, Date fechaIngreso, Date fechaEgreso, int nroHijos, EstadoCivil estadoCivil, Estados estado) {
+    public Egresado(int idEgresado, Distrito DistritoNacimiento, Distrito DistritoResidencia, String nombres, String apellidos, Date fechaNac, int edad, String dni, Sexo sexo, String direccion, String telefono1, String telefono2, String correro, Date fechaIngreso, Date fechaEgreso, int nroHijos, EstadoCivil estadoCivil, Estados estado) {
         this.idEgresado = idEgresado;
-        this.idDistritoNacimiento = idDistritoNacimiento;
-        this.idDistritoResidencia = idDistritoResidencia;
+        this.DistritoNacimiento = DistritoNacimiento;
+        this.DistritoResidencia = DistritoResidencia;
         this.nombres = nombres;
         this.apellidos = apellidos;
+        this.fechaNac = fechaNac;
+        this.edad = edad;
         this.dni = dni;
         this.sexo = sexo;
         this.direccion = direccion;
@@ -58,11 +62,10 @@ public class Egresado {
 
     @Override
     public String toString() {
-        return "Egresado{" + "idEgresado=" + idEgresado + ", idDistritoNacimiento=" + idDistritoNacimiento + ", idDistritoResidencia=" + idDistritoResidencia + ", nombres=" + nombres + ", apellidos=" + apellidos + ", dni=" + dni + ", sexo=" + sexo + ", direccion=" + direccion + ", telefono1=" + telefono1 + ", telefono2=" + telefono2 + ", correro=" + correro + ", fechaIngreso=" + fechaIngreso + ", fechaEgreso=" + fechaEgreso + ", nroHijos=" + nroHijos + ", estadoCivil=" + estadoCivil + ", estado=" + estado + '}';
+        return "Egresado{" + "idEgresado=" + idEgresado + ", DistritoNacimiento=" + DistritoNacimiento + ", DistritoResidencia=" + DistritoResidencia + ", nombres=" + nombres + ", apellidos=" + apellidos + ", fechaNac=" + fechaNac + ", edad=" + edad + ", dni=" + dni + ", sexo=" + sexo.getNom() + ", direccion=" + direccion + ", telefono1=" + telefono1 + ", telefono2=" + telefono2 + ", correro=" + correro + ", fechaIngreso=" + fechaIngreso + ", fechaEgreso=" + fechaEgreso + ", nroHijos=" + nroHijos + ", estadoCivil=" + estadoCivil.getNom() + ", estado=" + estado + '}';
     }
 
-     
-     
+         
     /**
      * @return the idEgresado
      */
@@ -78,31 +81,31 @@ public class Egresado {
     }
 
     /**
-     * @return the idDistritoNacimiento
+     * @return the DistritoNacimiento
      */
-    public Distrito getIdDistritoNacimiento() {
-        return idDistritoNacimiento;
+    public Distrito getDistritoNacimiento() {
+        return DistritoNacimiento;
     }
 
     /**
-     * @param idDistritoNacimiento the idDistritoNacimiento to set
+     * @param DistritoNacimiento the DistritoNacimiento to set
      */
-    public void setIdDistritoNacimiento(Distrito idDistritoNacimiento) {
-        this.idDistritoNacimiento = idDistritoNacimiento;
+    public void setDistritoNacimiento(Distrito DistritoNacimiento) {
+        this.DistritoNacimiento = DistritoNacimiento;
     }
 
     /**
-     * @return the idDistritoResidencia
+     * @return the DistritoResidencia
      */
-    public Distrito getIdDistritoResidencia() {
-        return idDistritoResidencia;
+    public Distrito getDistritoResidencia() {
+        return DistritoResidencia;
     }
 
     /**
-     * @param idDistritoResidencia the idDistritoResidencia to set
+     * @param DistritoResidencia the DistritoResidencia to set
      */
-    public void setIdDistritoResidencia(Distrito idDistritoResidencia) {
-        this.idDistritoResidencia = idDistritoResidencia;
+    public void setDistritoResidencia(Distrito DistritoResidencia) {
+        this.DistritoResidencia = DistritoResidencia;
     }
 
     /**
@@ -285,6 +288,34 @@ public class Egresado {
      */
     public void setEstado(Estados estado) {
         this.estado = estado;
+    }
+
+    /**
+     * @return the fechaNac
+     */
+    public Date getFechaNac() {
+        return fechaNac;
+    }
+
+    /**
+     * @param fechaNac the fechaNac to set
+     */
+    public void setFechaNac(Date fechaNac) {
+        this.fechaNac = fechaNac;
+    }
+
+    /**
+     * @return the edad
+     */
+    public int getEdad() {
+        return edad;
+    }
+
+    /**
+     * @param edad the edad to set
+     */
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
     

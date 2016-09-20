@@ -17,6 +17,7 @@ public interface EstudiosDAO {
     public Estudios modificar (Estudios objEs)throws DAOException;
     public Estudios leerxid(Estudios objEs)throws DAOException;
     public Estudios []leertodo()throws DAOException;
+    public Estudios []leertodoxidEgresado(Estudios objEs)throws DAOException;
     public boolean eliminar (Estudios objEs)throws DAOException;
     public boolean destruir(Estudios objEs)throws DAOException;
 }
