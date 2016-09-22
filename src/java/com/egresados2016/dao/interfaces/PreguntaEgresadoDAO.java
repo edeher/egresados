@@ -17,8 +17,9 @@ public interface PreguntaEgresadoDAO {
     public  PreguntaEgresado  modificar( PreguntaEgresado objPreE)throws DAOException;
     public  PreguntaEgresado leerxid ( PreguntaEgresado objPreE)throws DAOException;
     public  PreguntaEgresado[] leertodo()throws DAOException;
-    public  PreguntaEgresado[] leertodo(int idPreguntaEgresado)throws DAOException;
-     public  PreguntaEgresado[] leertodo( PreguntaEgresado objPreE)throws DAOException;
+    public  PreguntaEgresado[] leertodoxidEgresado(PreguntaEgresado objPreE)throws DAOException;
+    public  PreguntaEgresado[] leertodoxidPregunta( PreguntaEgresado objPreE)throws DAOException;
+    public  PreguntaEgresado[] leertodoxidRespuesta( PreguntaEgresado objPreE)throws DAOException;
     public boolean eliminar( PreguntaEgresado objPreE)throws DAOException;
     public boolean destruir( PreguntaEgresado objPreE)throws DAOException;
 }

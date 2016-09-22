@@ -27,6 +27,7 @@ public class Trabajos {
     private Estados estado;
 
     public Trabajos() {
+        this.egresado=new Egresado();
     }
 
     public Trabajos(int idTrabajos, Egresado egresado, Date fechaInicio, Date fechaFin, String puesto, String nomInstitucion, TipoContrato tipocontrato, String sueldo, TipoJornada tipojornada, Estados estado) {
@@ -44,7 +45,7 @@ public class Trabajos {
 
     @Override
     public String toString() {
-        return "Trabajos{" + "idTrabajos=" + idTrabajos + ", egresado=" + egresado + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", puesto=" + puesto + ", nomInstitucion=" + nomInstitucion + ", tipocontrato=" + tipocontrato + ", sueldo=" + sueldo + ", tipojornada=" + tipojornada + ", estado=" + estado + '}';
+        return "Trabajos{" + "idTrabajos=" + idTrabajos + ", egresado=" + egresado + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", puesto=" + puesto + ", nomInstitucion=" + nomInstitucion + ", tipocontrato=" + tipocontrato.getNom() + ", sueldo=" + sueldo + ", tipojornada=" + tipojornada.getNom() + ", estado=" + estado + '}';
     }
     
     

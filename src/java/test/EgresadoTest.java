@@ -139,10 +139,10 @@ public class EgresadoTest {
 	{
 		   EgresadoDAOFactory fabricate= new    EgresadoDAOFactory();
                    EgresadoDAO daote= fabricate.metodoDAO();
-                   Egresado objGr= new    Egresado();
-		 objGr.setIdEgresado(2);
+                   Egresado objE= new    Egresado();
+		 objE.setIdEgresado(2);
                 
-	 daote.eliminar(objGr);
+	 daote.eliminar(objE);
 	 System.out.println("se elimino correctamente");
 	 
 	    
@@ -151,10 +151,10 @@ public class EgresadoTest {
 	{
 		   EgresadoDAOFactory fabricate= new    EgresadoDAOFactory();
                    EgresadoDAO daote= fabricate.metodoDAO();
-                   Egresado objGr= new    Egresado();
-		 objGr.setIdEgresado(6);
+                   Egresado objE= new    Egresado();
+		 objE.setIdEgresado(6);
                 
-	 daote.destruir(objGr);
+	 daote.destruir(objE);
 	 System.out.println("se destruyo correctamente");
 	 
 	    

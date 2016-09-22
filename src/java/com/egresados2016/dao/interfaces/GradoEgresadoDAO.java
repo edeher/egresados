@@ -17,8 +17,8 @@ public interface GradoEgresadoDAO {
     public GradoEgresado  modificar(GradoEgresado objGraE)throws DAOException;
     public GradoEgresado leerxid (GradoEgresado objGraE)throws DAOException;
     public GradoEgresado[] leertodo()throws DAOException;
-    public GradoEgresado[] leertodo(int idGradoEgresado)throws DAOException;
-     public GradoEgresado[] leertodo(GradoEgresado objGraE)throws DAOException;
+    public GradoEgresado[] leertodoxgrados(GradoEgresado objGraE)throws DAOException;
+     public GradoEgresado[] leertodoxegresados(GradoEgresado objGraE)throws DAOException;
     public boolean eliminar(GradoEgresado objGraE)throws DAOException;
     public boolean destruir(GradoEgresado objGraE)throws DAOException;
 }

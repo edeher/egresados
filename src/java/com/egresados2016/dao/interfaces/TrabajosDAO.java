@@ -17,6 +17,7 @@ public interface TrabajosDAO {
     public Trabajos modificar (Trabajos objTra)throws DAOException;
     public Trabajos leerxid(Trabajos objTra)throws DAOException;
     public Trabajos []leertodo()throws DAOException;
+     public Trabajos []leertodoxidEgresado(Trabajos objTra)throws DAOException;
     public boolean eliminar (Trabajos objTra)throws DAOException;
     public boolean destruir(Trabajos objTra)throws DAOException;
 }
