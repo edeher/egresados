@@ -23,9 +23,10 @@ public class ProvinciaTest {
 //        crear();
 //        modificar();
 //        leerxid();
+        leerxdepartamento();
 //        leertodo();
 //        eliminar();
-        destruir();
+//        destruir();
     }
     public static void crear() throws DAOException
 	{
@@ -66,6 +67,23 @@ public class ProvinciaTest {
                  Provincia autorr=daote.leerxid(objPro);
 	 System.out.println(" "+autorr.toString());
 		
+		}
+       public static void leerxdepartamento()throws DAOException
+	{
+		ProvinciaDAOFactory fabricate= new ProvinciaDAOFactory();
+                ProvinciaDAO daote= fabricate.metodoDAO();
+                
+		Provincia objPro= new Provincia();
+		 objPro.getDepartamento().setIdDepartamento(2);
+              
+                Provincia[] provi=daote.leertodoxdepartamento(objPro);
+	  
+	  for(Provincia provi1:provi)
+	  {
+	      
+	      System.out.println(" "+provi1.toString());
+	  
+	  }
 		}
       public static void leertodo()throws DAOException
 	{

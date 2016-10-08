@@ -195,5 +195,39 @@ private final Connection con;
         }
         return true; 
     }
+
+    @Override
+    public Provincia []leertodoxdepartamento(Provincia objPro) throws DAOException {
+        try  {
+             CallableStatement st=con.prepareCall("{call sp_provincia_bcoxdepartamento(?)}");
+                    st.setInt(1, objPro.getDepartamento().getIdDepartamento());
+              ResultSet rs = st.executeQuery();
+                      
+            ArrayList<Provincia> tribs = new ArrayList<>(); 
+            
+            while (rs.next()) {
+                tribs.add(
+                        
+                    new Provincia(
+                            rs.getInt("idProvincia"),
+                              new Departamento(
+                            rs.getInt("idDepartamento"),
+                            
+                            rs.getString("descripcion1"),
+                           
+                            Estados.valueOf( rs.getString("estado1"))
+                     ),
+                            rs.getString("descripcion"),
+                            Estados.valueOf( rs.getString("estado"))
+                     ) 
+                     );
+            }
+            return tribs.toArray(new Provincia[0]);
+        } catch (SQLException se) {
+            
+            throw new DAOException("Error obteniedo todos las provincias en DAO: " 
+                    + se.getMessage(), se);
+        }  
+    }
     
 }

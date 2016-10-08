@@ -233,6 +233,50 @@ public class DistritoDAOJDBC implements DistritoDAO{
         }
         return true; 
     }
+
+    @Override
+    public Distrito[] leertodoxprovincia(Distrito objDi) throws DAOException {
+       try  {
+             CallableStatement st=con.prepareCall("{call sp_distrito_bcoxprovincia(?)}");
+                        st.setInt(1, objDi.getProvincia().getIdProvincia());
+              ResultSet rs = st.executeQuery();
+                      
+            ArrayList<Distrito> tribs = new ArrayList<>(); 
+            
+            while (rs.next()) {
+                tribs.add(
+                        
+                      new Distrito  (
+                            rs.getInt("idDistrito"),
+                            new Provincia(
+                                   rs.getInt("idProvincia"),
+                                     new Departamento(
+                                           rs.getInt("idDepartamento"),
+
+                                           rs.getString("descripcion1"),
+
+                                           Estados.valueOf( rs.getString("estado1"))
+                            ),
+
+                                   rs.getString("descripcion2"),
+
+                                   Estados.valueOf( rs.getString("estado2"))
+                            ),
+                     rs.getString("descripcion"),
+                     Estados.valueOf(rs.getString("estado"))
+                   
+                             )
+                   
+                   
+                   );
+            }
+            return tribs.toArray(new Distrito[0]);
+        } catch (SQLException se) {
+            
+            throw new DAOException("Error obteniedo todos las distritos en DAO: " 
+                    + se.getMessage(), se);
+        }  
+    }
     
     
 }

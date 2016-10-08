@@ -17,6 +17,7 @@ public interface DistritoDAO {
     public Distrito modificar (Distrito objDi)throws DAOException;
     public Distrito leerxid(Distrito objDi)throws DAOException;
     public Distrito []leertodo()throws DAOException;
+     public Distrito []leertodoxprovincia(Distrito objDi)throws DAOException;
     public boolean eliminar (Distrito objDi)throws DAOException;
     public boolean destruir(Distrito objDi)throws DAOException;
 }

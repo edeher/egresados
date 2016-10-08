@@ -23,7 +23,8 @@ public class DistritoTest {
 //       crear();
 //       modificar();
 //        leerxid();
-        leertodo();
+//        leertodo();
+        leertodoxprovincia();
 //        eliminar();
 //        destruir();
                 
@@ -74,6 +75,23 @@ public class DistritoTest {
                 DistritoDAO daote= fabricate.metodoDAO();
        
 	 Distrito[] Distri=daote.leertodo();
+	  
+	  for(Distrito Distri1:Distri)
+	  {
+	      
+	      System.out.println(" "+Distri1.toString());
+	  
+	  }
+	 
+        }
+       public static void leertodoxprovincia()throws DAOException
+	{
+		DistritoDAOFactory fabricate= new DistritoDAOFactory();
+                DistritoDAO daote= fabricate.metodoDAO();
+                Distrito objDis= new Distrito();
+		 objDis.getProvincia().setIdProvincia(2);
+       
+	 Distrito[] Distri=daote.leertodoxprovincia(objDis);
 	  
 	  for(Distrito Distri1:Distri)
 	  {
