@@ -10,27 +10,27 @@ package com.egresados2016.enums;
  * @author Mi Laptop
  */
 public enum TipoPregunta {
-    L("Laboral"),
+     L("Laboral"),
     A("Academico");
     
     private String nom;
 
-    /**
-     * @return the nom
-     */
+    private TipoPregunta(String nom) {
+        this.nom = nom;
+    }
+
     public String getNom() {
         return nom;
     }
 
-    /**
-     * @param nom the nom to set
-     */
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    private TipoPregunta(String nom) {
-        this.nom = nom;
-    }
+    
+
+    
+
+    
     
 }
