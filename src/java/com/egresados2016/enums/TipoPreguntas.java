@@ -9,13 +9,13 @@ package com.egresados2016.enums;
  *
  * @author Mi Laptop
  */
-public enum TipoPregunta {
+public enum TipoPreguntas {
      L("Laboral"),
     A("Academico");
     
     private String nom;
 
-    private TipoPregunta(String nom) {
+    private TipoPreguntas(String nom) {
         this.nom = nom;
     }
 

@@ -9,7 +9,7 @@ import com.egresados2016.dao.interfaces.PreguntaEgresadoDAO;
 import com.egresados2016.enums.EstadoCivil;
 import com.egresados2016.enums.Estados;
 import com.egresados2016.enums.Sexo;
-import com.egresados2016.enums.TipoPregunta;
+import com.egresados2016.enums.TipoPreguntas;
 import com.egresados2016.modelo.Departamento;
 import com.egresados2016.modelo.Distrito;
 import com.egresados2016.modelo.Egresado;
@@ -51,7 +51,7 @@ private final Connection con;
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
@@ -149,7 +149,7 @@ private final Connection con;
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
@@ -245,7 +245,7 @@ private final Connection con;
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
@@ -335,13 +335,11 @@ private final Connection con;
             ArrayList<PreguntaEgresado> tribs = new ArrayList<>(); 
             
             while (rs.next()) {
-                tribs.add(
-                        
-                    new PreguntaEgresado(  
+                tribs.add(new PreguntaEgresado(  
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
@@ -434,13 +432,11 @@ private final Connection con;
             ArrayList<PreguntaEgresado> tribs = new ArrayList<>(); 
             
             while (rs.next()) {
-                tribs.add(
-                        
-                    new PreguntaEgresado(  
+                tribs.add(new PreguntaEgresado(  
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
@@ -533,13 +529,11 @@ private final Connection con;
             ArrayList<PreguntaEgresado> tribs = new ArrayList<>(); 
             
             while (rs.next()) {
-                tribs.add(
-                        
-                    new PreguntaEgresado(  
+                tribs.add(new PreguntaEgresado(  
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
@@ -632,13 +626,11 @@ private final Connection con;
             ArrayList<PreguntaEgresado> tribs = new ArrayList<>(); 
             
             while (rs.next()) {
-                tribs.add(
-                        
-                    new PreguntaEgresado(  
+                tribs.add(new PreguntaEgresado(  
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
