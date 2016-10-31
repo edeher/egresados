@@ -8,7 +8,7 @@ package test;
 import com.egresados2016.dao.factory.PreguntaDAOFactory;
 import com.egresados2016.dao.interfaces.PreguntaDAO;
 import com.egresados2016.dao.jdbc.DAOException;
-import com.egresados2016.enums.TipoPreguntas;
+import com.egresados2016.enums.TipoPregunta;
 import com.egresados2016.modelo.Pregunta;
 
 /**
@@ -35,7 +35,7 @@ public class PreguntaTest {
                 PreguntaDAO daote= fabricate.metodoDAO();
                 
 		Pregunta objPr= new Pregunta();
-                objPr.setTipopregunta(TipoPreguntas.L);
+                objPr.setTipopregunta(TipoPregunta.L);
 		 objPr.setDescripcion("moralesss");
               
                 
@@ -52,7 +52,7 @@ public class PreguntaTest {
                 
 		Pregunta objPr= new Pregunta();
                 objPr.setIdPregunta(1);
-                objPr.setTipopregunta(TipoPreguntas.L);
+                objPr.setTipopregunta(TipoPregunta.L);
 		 objPr.setDescripcion("edeherrrr");
               
                  Pregunta pregu=daote.modificar(objPr);

@@ -7,7 +7,7 @@ package com.egresados2016.dao.jdbc;
 
 import com.egresados2016.dao.interfaces.PreguntaDAO;
 import com.egresados2016.enums.Estados;
-import com.egresados2016.enums.TipoPreguntas;
+import com.egresados2016.enums.TipoPregunta;
 import com.egresados2016.modelo.Pregunta;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -39,7 +39,7 @@ private final Connection con;
            return (
                     new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
+                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion"),
                             Estados.valueOf(rs.getString("estado"))
                    
@@ -68,7 +68,7 @@ private final Connection con;
            return (
                     new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
+                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion"),
                             Estados.valueOf(rs.getString("estado"))
                    
@@ -96,7 +96,7 @@ private final Connection con;
            return (
                     new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
+                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion"),
                             Estados.valueOf(rs.getString("estado"))
                    
@@ -120,9 +120,11 @@ private final Connection con;
             ArrayList<Pregunta> tribs = new ArrayList<>(); 
             
             while (rs.next()) {
-                tribs.add(new Pregunta (
+                tribs.add(
+                        
+                     new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
+                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion"),
                             Estados.valueOf(rs.getString("estado"))
                    

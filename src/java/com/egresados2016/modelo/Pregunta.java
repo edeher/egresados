@@ -6,7 +6,7 @@
 package com.egresados2016.modelo;
 
 import com.egresados2016.enums.Estados;
-import com.egresados2016.enums.TipoPreguntas;
+import com.egresados2016.enums.TipoPregunta;
 
 /**
  *
@@ -14,14 +14,14 @@ import com.egresados2016.enums.TipoPreguntas;
  */
 public class Pregunta {
     private int idPregunta;
-    private TipoPreguntas tipopregunta;
+    private TipoPregunta tipopregunta;
     private String descripcion;
     private Estados estado;
 
     public Pregunta() {
     }
 
-    public Pregunta(int idPregunta, TipoPreguntas tipopregunta, String descripcion, Estados estado) {
+    public Pregunta(int idPregunta, TipoPregunta tipopregunta, String descripcion, Estados estado) {
         this.idPregunta = idPregunta;
         this.tipopregunta = tipopregunta;
         this.descripcion = descripcion;
@@ -51,14 +51,14 @@ public class Pregunta {
     /**
      * @return the tipopregunta
      */
-    public TipoPreguntas getTipopregunta() {
+    public TipoPregunta getTipopregunta() {
         return tipopregunta;
     }
 
     /**
      * @param tipopregunta the tipopregunta to set
      */
-    public void setTipopregunta(TipoPreguntas tipopregunta) {
+    public void setTipopregunta(TipoPregunta tipopregunta) {
         this.tipopregunta = tipopregunta;
     }
 
