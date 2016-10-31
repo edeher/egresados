@@ -5,17 +5,9 @@
  */
 package com.egresados2016.controlador;
 
-import com.egresados2016.dao.factory.GradosDAOFactory;
-import com.egresados2016.dao.interfaces.GradosDAO;
-import com.egresados2016.dao.jdbc.DAOException;
-import com.egresados2016.modelo.Grados;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,12 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Mi Laptop
  */
-@WebServlet(name = "GradosController", urlPatterns = {"/GradosController"})
-@MultipartConfig
 public class GradosController extends HttpServlet {
-    private GradosDAOFactory fabricate;
-    private GradosDAO daote;
-    private Grados objGra;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,16 +28,19 @@ public class GradosController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, DAOException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String accion=request.getParameter("accion");
-        fabricate = new GradosDAOFactory();
-        daote=fabricate.metodoDAO();
-        switch(accion){
-            case "obtenerporEscuela":obtenerporEscuela(request,response);break;
-            case "modificar":modificar(request,response);break;
-            case "crear":crear(request,response);break;
-            case "eliminar":eliminar(request,response);break;
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet GradosController</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet GradosController at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 
@@ -66,11 +56,7 @@ public class GradosController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (DAOException ex) {
-            Logger.getLogger(GradosController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -84,11 +70,7 @@ public class GradosController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (DAOException ex) {
-            Logger.getLogger(GradosController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -100,38 +82,5 @@ public class GradosController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    private void obtenerporEscuela(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
-       response.setContentType("text/html");
-        PrintWriter out=response.getWriter();
-        System.out.println("recibiendo");
-        /*-----------------------------------------------------------------------------------------------*/
-        objGra=new Grados();
-        objGra.getEscuela().setIdEscuela((Integer.parseInt(request.getParameter("codigo"))));
-        System.out.println("codigo "+objGra.getEscuela().getIdEscuela());
-        /*-----------------------------------------------------------------------------------------------*/  
-        Grados [] grado=daote.leertodoxEscuela(objGra);
-        StringBuilder gradoss=new StringBuilder();
-        /*-----------------------------------------------------------------------------------------------*/  
-        for(Grados grado1: grado)
-        {
-            System.out.println("sss"+grado1);
-           gradoss.append("<option value='").append(grado1.getIdGrados()).append("'>")
-                    .append(grado1.getDescripcion()).append("</option>");
-        }
-        out.print(gradoss.toString());
-    }
-
-    private void modificar(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void crear(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void eliminar(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }
