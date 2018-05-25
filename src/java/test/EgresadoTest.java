@@ -13,7 +13,7 @@ import com.egresados2016.enums.Sexo;
 import com.egresados2016.modelo.Egresado;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -31,7 +31,8 @@ public class EgresadoTest {
 //        leerxid();
 //        leertodo();
 //        eliminar();
-        destruir();
+//        destruir();
+egresados_sin_encuestar();;
     }
     public static void crear() throws DAOException
 	{
@@ -46,17 +47,18 @@ public class EgresadoTest {
                 
                  objE.getDistritoNacimiento().setIdDistrito(1);
                  objE.getDistritoResidencia().setIdDistrito(1);
+                 objE.getEscuela().setIdEscuela(1);
                  objE.setNombres("edeher");
                  objE.setApellidos("ponce");
                  objE.setFechaNac(fec);
-                 objE.setDni("44444444");
+                 objE.setDni("44444499");
                  objE.setSexo(Sexo.M);
                  objE.setDireccion("ya llego");
                  objE.setTelefono1("789456123");
                  objE.setTelefono2("321456988");
                  objE.setCorrero("@@@@@@@@");
-                 objE.setFechaIngreso(fec);
-                 objE.setFechaEgreso(fec);
+                 objE.setAnioIngreso("2006");
+                 objE.setAnioEgreso("2008");
                  objE.setNroHijos(3);
                  objE.setEstadoCivil(EstadoCivil.CO);
             
@@ -92,8 +94,8 @@ public class EgresadoTest {
                  objE.setTelefono1("789456123");
                  objE.setTelefono2("321456988");
                  objE.setCorrero("@@@@@@@@");
-                 objE.setFechaIngreso(fec1);
-                 objE.setFechaEgreso(fec1);
+                 objE.setAnioIngreso("2006");
+                 objE.setAnioEgreso("2008");
                  objE.setNroHijos(3);
                  objE.setEstadoCivil(EstadoCivil.CO);
             
@@ -126,6 +128,21 @@ public class EgresadoTest {
                   EgresadoDAO daote= fabricate.metodoDAO();
        
 	  Egresado[] egre=daote.leertodo();
+	  
+	  for(  Egresado egre1:egre)
+	  {
+	      
+	      System.out.println(" "+egre1.toString());
+	  
+	  }
+	 
+        }
+       public static void egresados_sin_encuestar()throws DAOException
+	{
+		  EgresadoDAOFactory fabricate= new   EgresadoDAOFactory();
+                  EgresadoDAO daote= fabricate.metodoDAO();
+       
+	  Egresado[] egre=daote.egresados_sin_encuestar();
 	  
 	  for(  Egresado egre1:egre)
 	  {

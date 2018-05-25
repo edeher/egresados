@@ -12,7 +12,9 @@ import com.egresados2016.enums.Sexo;
 import com.egresados2016.modelo.Departamento;
 import com.egresados2016.modelo.Distrito;
 import com.egresados2016.modelo.Egresado;
+import com.egresados2016.modelo.Escuela;
 import com.egresados2016.modelo.Estudios;
+import com.egresados2016.modelo.Facultad;
 import com.egresados2016.modelo.Provincia;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -93,6 +95,17 @@ public class EstudiosDAOJDBC implements EstudiosDAO{
                             Estados.valueOf(rs.getString("estado6"))
                    
                              ),
+                             new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
+                             ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -103,8 +116,8 @@ public class EstudiosDAOJDBC implements EstudiosDAO{
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                           rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -184,7 +197,17 @@ public class EstudiosDAOJDBC implements EstudiosDAO{
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -195,8 +218,8 @@ public class EstudiosDAOJDBC implements EstudiosDAO{
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                             rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -271,7 +294,17 @@ public class EstudiosDAOJDBC implements EstudiosDAO{
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -282,8 +315,8 @@ public class EstudiosDAOJDBC implements EstudiosDAO{
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                            rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -360,7 +393,17 @@ public class EstudiosDAOJDBC implements EstudiosDAO{
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -371,8 +414,8 @@ public class EstudiosDAOJDBC implements EstudiosDAO{
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                             rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -499,7 +542,17 @@ public class EstudiosDAOJDBC implements EstudiosDAO{
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -510,8 +563,8 @@ public class EstudiosDAOJDBC implements EstudiosDAO{
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                            rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))

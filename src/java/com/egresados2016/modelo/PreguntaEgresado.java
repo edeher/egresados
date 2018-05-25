@@ -5,7 +5,8 @@
  */
 package com.egresados2016.modelo;
 
-import com.egresados2016.enums.Estados;
+import com.egresados2016.enums.Afirmacion;
+
 
 /**
  *
@@ -16,7 +17,7 @@ public class PreguntaEgresado {
     private Pregunta pregunta;
     private Egresado egresado;
     private Respuesta respuesta;
-    private Estados estado;
+    private Afirmacion afirmacion;
 
     public PreguntaEgresado() {
         this.pregunta=new Pregunta();
@@ -24,88 +25,59 @@ public class PreguntaEgresado {
         this.respuesta=new Respuesta();
     }
 
-    public PreguntaEgresado(int idPreguntaEgresado, Pregunta pregunta, Egresado egresado, Respuesta respuesta, Estados estado) {
+    public PreguntaEgresado(int idPreguntaEgresado, Pregunta pregunta, Egresado egresado, Respuesta respuesta, Afirmacion afirmacion) {
         this.idPreguntaEgresado = idPreguntaEgresado;
         this.pregunta = pregunta;
         this.egresado = egresado;
         this.respuesta = respuesta;
-        this.estado = estado;
+        this.afirmacion = afirmacion;
     }
 
     @Override
     public String toString() {
-        return "PreguntaEgresado{" + "idPreguntaEgresado=" + idPreguntaEgresado + ", pregunta=" + pregunta + ", egresado=" + egresado + ", respuesta=" + respuesta + ", estado=" + estado + '}';
+        return "PreguntaEgresado{" + "idPreguntaEgresado=" + idPreguntaEgresado + ", pregunta=" + pregunta + ", egresado=" + egresado + ", respuesta=" + respuesta + ", afirmacion=" + afirmacion + '}';
     }
+    
 
-    
-    
-    /**
-     * @return the idPreguntaEgresado
-     */
     public int getIdPreguntaEgresado() {
         return idPreguntaEgresado;
     }
 
-    /**
-     * @param idPreguntaEgresado the idPreguntaEgresado to set
-     */
     public void setIdPreguntaEgresado(int idPreguntaEgresado) {
         this.idPreguntaEgresado = idPreguntaEgresado;
     }
 
-    /**
-     * @return the pregunta
-     */
     public Pregunta getPregunta() {
         return pregunta;
     }
 
-    /**
-     * @param pregunta the pregunta to set
-     */
     public void setPregunta(Pregunta pregunta) {
         this.pregunta = pregunta;
     }
 
-    /**
-     * @return the egresado
-     */
     public Egresado getEgresado() {
         return egresado;
     }
 
-    /**
-     * @param egresado the egresado to set
-     */
     public void setEgresado(Egresado egresado) {
         this.egresado = egresado;
     }
 
-    /**
-     * @return the respuesta
-     */
     public Respuesta getRespuesta() {
         return respuesta;
     }
 
-    /**
-     * @param respuesta the respuesta to set
-     */
     public void setRespuesta(Respuesta respuesta) {
         this.respuesta = respuesta;
     }
 
-    /**
-     * @return the estado
-     */
-    public Estados getEstado() {
-        return estado;
+    public Afirmacion getAfirmacion() {
+        return afirmacion;
     }
 
-    /**
-     * @param estado the estado to set
-     */
-    public void setEstado(Estados estado) {
-        this.estado = estado;
+    public void setAfirmacion(Afirmacion afirmacion) {
+        this.afirmacion = afirmacion;
     }
+
+   
 }

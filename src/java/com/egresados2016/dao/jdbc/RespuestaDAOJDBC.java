@@ -7,6 +7,7 @@ package com.egresados2016.dao.jdbc;
 
 import com.egresados2016.dao.interfaces.RespuestaDAO;
 import com.egresados2016.enums.Estados;
+import com.egresados2016.enums.Grupo;
 import com.egresados2016.modelo.Respuesta;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -27,9 +28,9 @@ private final Connection con;
     @Override
     public Respuesta crear(Respuesta objRe) throws DAOException {
         try{
-        CallableStatement st=con.prepareCall("{call sp_respuesta_n(?)}");
-                            
-                            st.setString(1,objRe.getDescripcion() );
+        CallableStatement st=con.prepareCall("{call sp_respuesta_n(?,?)}");
+                            st.setString(1, objRe.getGrupo().name());
+                            st.setString(2,objRe.getDescripcion() );
                           
              ResultSet rs = st.executeQuery();
             if (!rs.next()) {
@@ -38,6 +39,7 @@ private final Connection con;
            return (
                     new Respuesta (
                             rs.getInt("idRespuesta"),
+                            Grupo.valueOf(rs.getString("grupo")),
                             rs.getString("descripcion"),
                             Estados.valueOf(rs.getString("estado"))
                    
@@ -54,10 +56,11 @@ private final Connection con;
     @Override
     public Respuesta modificar(Respuesta objRe) throws DAOException {
         try{
-        CallableStatement st=con.prepareCall("{call sp_respuesta_m(?,?)}");
+        CallableStatement st=con.prepareCall("{call sp_respuesta_m(?,?,?)}");
                             
                             st.setInt(1,objRe.getIdRespuesta() );
-                            st.setString(2,objRe.getDescripcion() );
+                            st.setString(2, objRe.getGrupo().name());
+                            st.setString(3,objRe.getDescripcion() );
                           
              ResultSet rs = st.executeQuery();
             if (!rs.next()) {
@@ -66,6 +69,7 @@ private final Connection con;
            return (
                     new Respuesta (
                             rs.getInt("idRespuesta"),
+                             Grupo.valueOf(rs.getString("grupo")),
                             rs.getString("descripcion"),
                             Estados.valueOf(rs.getString("estado"))
                    
@@ -94,6 +98,7 @@ private final Connection con;
            return (
                     new Respuesta (
                             rs.getInt("idRespuesta"),
+                             Grupo.valueOf(rs.getString("grupo")),
                             rs.getString("descripcion"),
                             Estados.valueOf(rs.getString("estado"))
                    
@@ -121,6 +126,7 @@ private final Connection con;
                         
                       new Respuesta (
                             rs.getInt("idRespuesta"),
+                               Grupo.valueOf(rs.getString("grupo")),
                             rs.getString("descripcion"),
                             Estados.valueOf(rs.getString("estado"))
                    

@@ -6,13 +6,18 @@
 package com.egresados2016.dao.jdbc;
 
 import com.egresados2016.dao.interfaces.PreguntaEgresadoDAO;
+import com.egresados2016.enums.Afirmacion;
 import com.egresados2016.enums.EstadoCivil;
 import com.egresados2016.enums.Estados;
+import com.egresados2016.enums.Grupo;
 import com.egresados2016.enums.Sexo;
-import com.egresados2016.enums.TipoPregunta;
+import com.egresados2016.enums.TipoPreguntas;
 import com.egresados2016.modelo.Departamento;
 import com.egresados2016.modelo.Distrito;
 import com.egresados2016.modelo.Egresado;
+import com.egresados2016.modelo.Encuesta;
+import com.egresados2016.modelo.Escuela;
+import com.egresados2016.modelo.Facultad;
 import com.egresados2016.modelo.Pregunta;
 import com.egresados2016.modelo.PreguntaEgresado;
 import com.egresados2016.modelo.Provincia;
@@ -37,10 +42,11 @@ private final Connection con;
     @Override
     public PreguntaEgresado crear(PreguntaEgresado objPreE) throws DAOException {
      try{
-        CallableStatement st=con.prepareCall("{call sp_preguntaegresado_n(?,?,?)}");
+        CallableStatement st=con.prepareCall("{call sp_preguntaegresado_n(?,?,?,?)}");
                             st.setInt(1, objPreE.getPregunta().getIdPregunta());
                             st.setInt(2,objPreE.getEgresado().getIdEgresado() );
                             st.setInt(3,objPreE.getRespuesta().getIdRespuesta() );
+                            st.setString(4,objPreE.getAfirmacion().name()      );
                           
              ResultSet rs = st.executeQuery();
             if (!rs.next()) {
@@ -51,7 +57,12 @@ private final Connection con;
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                              new Encuesta(
+                            rs.getInt("idEncuesta"),
+                            rs.getString("descripcion8"),
+                            Estados.valueOf(rs.getString("estado8"))
+                                    ),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
@@ -95,7 +106,17 @@ private final Connection con;
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -106,8 +127,8 @@ private final Connection con;
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                             rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -115,13 +136,14 @@ private final Connection con;
                              ),
                                 new Respuesta (
                             rs.getInt("idRespuesta"),
+                                         Grupo.valueOf(rs.getString("grupo")),
                             rs.getString("descripcion11"),
                             Estados.valueOf(rs.getString("estado11"))
                    
                              )
                                ,
                                
-                                Estados.valueOf(rs.getString("estado"))
+                                Afirmacion.valueOf(rs.getString("afirmacion"))
                    
                        )
                    );
@@ -134,12 +156,12 @@ private final Connection con;
     @Override
     public PreguntaEgresado modificar(PreguntaEgresado objPreE) throws DAOException {
        try{
-        CallableStatement st=con.prepareCall("{call sp_preguntaegresado_m(?,?,?,?)}");
+        CallableStatement st=con.prepareCall("{call sp_preguntaegresado_m(?,?,?,?,?)}");
                             st.setInt(1, objPreE.getIdPreguntaEgresado());
                             st.setInt(2, objPreE.getPregunta().getIdPregunta());
                             st.setInt(3,objPreE.getEgresado().getIdEgresado() );
                             st.setInt(4,objPreE.getRespuesta().getIdRespuesta() );
-                          
+                             st.setString(5,objPreE.getAfirmacion().name()      );
              ResultSet rs = st.executeQuery();
             if (!rs.next()) {
                 return null;
@@ -149,7 +171,12 @@ private final Connection con;
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                              new Encuesta(
+                            rs.getInt("idEncuesta"),
+                            rs.getString("descripcion8"),
+                            Estados.valueOf(rs.getString("estado8"))
+                                    ),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
@@ -193,7 +220,17 @@ private final Connection con;
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -204,8 +241,8 @@ private final Connection con;
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                             rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -213,13 +250,14 @@ private final Connection con;
                              ),
                                 new Respuesta (
                             rs.getInt("idRespuesta"),
+                                         Grupo.valueOf(rs.getString("grupo")),
                             rs.getString("descripcion11"),
                             Estados.valueOf(rs.getString("estado11"))
                    
                              )
                                ,
                                
-                                Estados.valueOf(rs.getString("estado"))
+                                Afirmacion.valueOf(rs.getString("afirmacion"))
                    
                        )
                    );
@@ -245,7 +283,12 @@ private final Connection con;
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                              new Encuesta(
+                            rs.getInt("idEncuesta"),
+                            rs.getString("descripcion8"),
+                            Estados.valueOf(rs.getString("estado8"))
+                                    ),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
@@ -289,7 +332,17 @@ private final Connection con;
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -300,8 +353,8 @@ private final Connection con;
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                            rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -309,13 +362,14 @@ private final Connection con;
                              ),
                                 new Respuesta (
                             rs.getInt("idRespuesta"),
+                                         Grupo.valueOf(rs.getString("grupo")),
                             rs.getString("descripcion11"),
                             Estados.valueOf(rs.getString("estado11"))
                    
                              )
                                ,
                                
-                                Estados.valueOf(rs.getString("estado"))
+                             Afirmacion.valueOf(rs.getString("afirmacion"))
                    
                        )
                    );
@@ -335,13 +389,16 @@ private final Connection con;
             ArrayList<PreguntaEgresado> tribs = new ArrayList<>(); 
             
             while (rs.next()) {
-                tribs.add(
-                        
-                    new PreguntaEgresado(  
+                tribs.add(new PreguntaEgresado(  
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                              new Encuesta(
+                            rs.getInt("idEncuesta"),
+                            rs.getString("descripcion8"),
+                            Estados.valueOf(rs.getString("estado8"))
+                                    ),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
@@ -385,7 +442,17 @@ private final Connection con;
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -396,8 +463,8 @@ private final Connection con;
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                             rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -405,13 +472,14 @@ private final Connection con;
                              ),
                                 new Respuesta (
                             rs.getInt("idRespuesta"),
+                                         Grupo.valueOf(rs.getString("grupo")),
                             rs.getString("descripcion11"),
                             Estados.valueOf(rs.getString("estado11"))
                    
                              )
                                ,
                                
-                                Estados.valueOf(rs.getString("estado"))
+                              Afirmacion.valueOf(rs.getString("afirmacion"))
                    
                        )
                    );
@@ -434,13 +502,16 @@ private final Connection con;
             ArrayList<PreguntaEgresado> tribs = new ArrayList<>(); 
             
             while (rs.next()) {
-                tribs.add(
-                        
-                    new PreguntaEgresado(  
+                tribs.add(new PreguntaEgresado(  
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                              new Encuesta(
+                            rs.getInt("idEncuesta"),
+                            rs.getString("descripcion8"),
+                            Estados.valueOf(rs.getString("estado8"))
+                                    ),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
@@ -484,7 +555,17 @@ private final Connection con;
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -495,8 +576,8 @@ private final Connection con;
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                             rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -504,13 +585,14 @@ private final Connection con;
                              ),
                                 new Respuesta (
                             rs.getInt("idRespuesta"),
+                                         Grupo.valueOf(rs.getString("grupo")),
                             rs.getString("descripcion11"),
                             Estados.valueOf(rs.getString("estado11"))
                    
                              )
                                ,
                                
-                                Estados.valueOf(rs.getString("estado"))
+                               Afirmacion.valueOf(rs.getString("afirmacion"))
                    
                        )
                    );
@@ -533,13 +615,16 @@ private final Connection con;
             ArrayList<PreguntaEgresado> tribs = new ArrayList<>(); 
             
             while (rs.next()) {
-                tribs.add(
-                        
-                    new PreguntaEgresado(  
+                tribs.add(new PreguntaEgresado(  
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                              new Encuesta(
+                            rs.getInt("idEncuesta"),
+                            rs.getString("descripcion8"),
+                            Estados.valueOf(rs.getString("estado8"))
+                                    ),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
@@ -583,7 +668,17 @@ private final Connection con;
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -594,8 +689,8 @@ private final Connection con;
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                             rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -603,13 +698,14 @@ private final Connection con;
                              ),
                                 new Respuesta (
                             rs.getInt("idRespuesta"),
+                                         Grupo.valueOf(rs.getString("grupo")),
                             rs.getString("descripcion11"),
                             Estados.valueOf(rs.getString("estado11"))
                    
                              )
                                ,
                                
-                                Estados.valueOf(rs.getString("estado"))
+                                Afirmacion.valueOf(rs.getString("afirmacion"))
                    
                        )
                    );
@@ -632,13 +728,16 @@ private final Connection con;
             ArrayList<PreguntaEgresado> tribs = new ArrayList<>(); 
             
             while (rs.next()) {
-                tribs.add(
-                        
-                    new PreguntaEgresado(  
+                tribs.add(new PreguntaEgresado(  
                                rs.getInt("idPreguntaEgresado"),
                       new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                              new Encuesta(
+                            rs.getInt("idEncuesta"),
+                            rs.getString("descripcion8"),
+                            Estados.valueOf(rs.getString("estado8"))
+                                    ),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion7"),
                             Estados.valueOf(rs.getString("estado7"))
                    
@@ -682,7 +781,17 @@ private final Connection con;
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -693,8 +802,8 @@ private final Connection con;
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                           rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -702,13 +811,14 @@ private final Connection con;
                              ),
                                 new Respuesta (
                             rs.getInt("idRespuesta"),
+                                         Grupo.valueOf(rs.getString("grupo")),
                             rs.getString("descripcion11"),
                             Estados.valueOf(rs.getString("estado11"))
                    
                              )
                                ,
                                
-                                Estados.valueOf(rs.getString("estado"))
+                                Afirmacion.valueOf(rs.getString("afirmacion"))
                    
                        )
                    );

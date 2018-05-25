@@ -102,7 +102,17 @@ private final Connection con;
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela1"),
+                    new Facultad (
+                            rs.getInt("idFacultad1"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -113,8 +123,8 @@ private final Connection con;
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                             rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -201,7 +211,17 @@ private final Connection con;
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela1"),
+                    new Facultad (
+                            rs.getInt("idFacultad1"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -212,8 +232,8 @@ private final Connection con;
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                            rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -298,7 +318,17 @@ private final Connection con;
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela1"),
+                    new Facultad (
+                            rs.getInt("idFacultad1"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -309,8 +339,8 @@ private final Connection con;
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                             rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -395,7 +425,17 @@ private final Connection con;
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela1"),
+                    new Facultad (
+                            rs.getInt("idFacultad1"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -406,8 +446,8 @@ private final Connection con;
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                             rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -496,7 +536,17 @@ private final Connection con;
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela1"),
+                    new Facultad (
+                            rs.getInt("idFacultad1"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -507,8 +557,8 @@ private final Connection con;
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                             rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -597,7 +647,17 @@ private final Connection con;
                             rs.getString("distritoRec"),
                             Estados.valueOf(rs.getString("estado6"))
                    
+                             ), new Escuela(
+                           rs.getInt("idEscuela1"),
+                    new Facultad (
+                            rs.getInt("idFacultad1"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
                              ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
                             rs.getString("nombres"),
                             rs.getString("apellidos"),
                             rs.getDate("fechaNac"),
@@ -608,8 +668,8 @@ private final Connection con;
                             rs.getString("telefono1"),
                             rs.getString("telefono2"),
                             rs.getString("correo"),
-                            rs.getDate("fechaIngreso"),
-                            rs.getDate("fechaEgreso"),
+                           rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
                             rs.getInt("nroHijos"),
                             EstadoCivil.valueOf(rs.getString("estadoCivil")),
                             Estados.valueOf(rs.getString("estado10"))
@@ -667,6 +727,114 @@ private final Connection con;
             throw new DAOException("Error destruyendo  gradoegresado en DAO", se);
         }
         return true; 
+    }
+    
+    @Override
+    public GradoEgresado leerxidXids(GradoEgresado objGraE) throws DAOException {
+      try{
+        CallableStatement st=con.prepareCall("{call sp_gradoegresado_bcoxidEgresado_idGrados(?,?)}");
+                             st.setInt(1, objGraE.getIdGradoEgresado());
+                                st.setInt(2, objGraE.getEgresado().getIdEgresado());
+                           
+                          
+             ResultSet rs = st.executeQuery();
+            if (!rs.next()) {
+                return null;
+}
+           return (
+                       new GradoEgresado(  
+                               rs.getInt("idGradoEgresado"),
+                     new Grados(
+                            rs.getInt("idGrados"),
+                            new Escuela(
+                            rs.getInt("idEscuela"),
+                                new Facultad (
+                                    rs.getInt("idFacultad"),
+                                    rs.getString("descripcion7"),
+                                    Estados.valueOf(rs.getString("estado7"))
+                                ),
+                            rs.getString("descripcion8"),
+                            Estados.valueOf(rs.getString("estado8"))
+                            ),
+                            rs.getString("descripcion9"),
+                            Estados.valueOf( rs.getString("estado9"))
+                     ),
+                   new Egresado (
+                            rs.getInt("idEgresado"),
+                            new Distrito  (
+                            rs.getInt("idDistritoNac"),
+                            new Provincia(
+                                   rs.getInt("idProvinciaNac"),
+                                   new Departamento(
+                                           rs.getInt("idDepartamentoNac"),
+
+                                           rs.getString("departamentoNac"),
+
+                                           Estados.valueOf( rs.getString("estado1"))
+                                    ),
+                                   rs.getString("provinciaNac"),
+                                   Estados.valueOf( rs.getString("estado2"))
+                                   ),
+                            rs.getString("distritoNac"),
+                            Estados.valueOf(rs.getString("estado3"))
+                   
+                             ),
+                            new Distrito  (
+                            rs.getInt("idDistritoRec"),
+                            new Provincia(
+                                   rs.getInt("idProvinciaRec"),
+                                     new Departamento(
+                                           rs.getInt("idDepartamentoRec"),
+
+                                           rs.getString("departamentoRec"),
+
+                                           Estados.valueOf( rs.getString("estado4"))
+                                    ),
+
+                                   rs.getString("provinciaRec"),
+
+                                   Estados.valueOf( rs.getString("estado5"))
+                                ),
+                            rs.getString("distritoRec"),
+                            Estados.valueOf(rs.getString("estado6"))
+                   
+                             ), new Escuela(
+                           rs.getInt("idEscuela1"),
+                    new Facultad (
+                            rs.getInt("idFacultad1"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
+                             ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
+                            rs.getString("nombres"),
+                            rs.getString("apellidos"),
+                            rs.getDate("fechaNac"),
+                            rs.getInt("edad"),
+                            rs.getString("dni"),
+                            Sexo.valueOf( rs.getString("sexo")),
+                            rs.getString("direccion"),
+                            rs.getString("telefono1"),
+                            rs.getString("telefono2"),
+                            rs.getString("correo"),
+                            rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
+                            rs.getInt("nroHijos"),
+                            EstadoCivil.valueOf(rs.getString("estadoCivil")),
+                            Estados.valueOf(rs.getString("estado10"))
+                   
+                             ),
+                               rs.getDate("fecha"),
+                                Estados.valueOf(rs.getString("estado"))
+                   
+                       )
+                   );
+           } catch (SQLException se) {
+            
+            throw new DAOException("Error leyendo grados egresados en DAO", se);
+        }   
     }
     
 }

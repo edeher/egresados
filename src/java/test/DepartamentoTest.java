@@ -24,9 +24,9 @@ public class DepartamentoTest {
 //        crear();
 //        modificar();
 //        leerxid();
-//        leertodo();
+        leertodo();
 //        eliminar();
-        destruir();
+//        destruir();
     }
       public static void crear() throws DAOException
 	{

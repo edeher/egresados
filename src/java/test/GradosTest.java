@@ -26,7 +26,8 @@ public class GradosTest {
 //        leerxid();
 //        leertodo();
 //        eliminar();
-        destruir();
+//        destruir();
+leertodoxescuela();
     }
     public static void crear() throws DAOException
 	{
@@ -81,6 +82,24 @@ public class GradosTest {
                  GradosDAO daote= fabricate.metodoDAO();
        
 	  Grados[] grado=daote.leertodo();
+	  
+	  for( Grados grado1:grado)
+	  {
+	      
+	      System.out.println(" "+grado1.toString());
+	  
+	  }
+	 
+        }
+         public static void leertodoxescuela()throws DAOException
+	{
+		 GradosDAOFactory fabricate= new  GradosDAOFactory();
+                 GradosDAO daote= fabricate.metodoDAO();
+                 
+                  Grados objGr= new  Grados();
+		 objGr.getEscuela().setIdEscuela(1);
+       
+	  Grados[] grado=daote.leertodoxEscuela(objGr);
 	  
 	  for( Grados grado1:grado)
 	  {

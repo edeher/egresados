@@ -8,7 +8,7 @@ package test;
 import com.egresados2016.dao.factory.PreguntaDAOFactory;
 import com.egresados2016.dao.interfaces.PreguntaDAO;
 import com.egresados2016.dao.jdbc.DAOException;
-import com.egresados2016.enums.TipoPregunta;
+import com.egresados2016.enums.TipoPreguntas;
 import com.egresados2016.modelo.Pregunta;
 
 /**
@@ -24,10 +24,10 @@ public class PreguntaTest {
         // TODO code application logic here
 //        crear();
 //        modificar();
-//        leerxid();
+        leerxid();
 //        leertodo();
 //        eliminar();
-        destruir();
+//        destruir();
     }
     public static void crear() throws DAOException
 	{
@@ -35,8 +35,9 @@ public class PreguntaTest {
                 PreguntaDAO daote= fabricate.metodoDAO();
                 
 		Pregunta objPr= new Pregunta();
-                objPr.setTipopregunta(TipoPregunta.L);
-		 objPr.setDescripcion("moralesss");
+                objPr.getEncuesta().setIdEncuesta(1);
+                objPr.setTipopregunta(TipoPreguntas.L);
+		 objPr.setDescripcion("morals");
               
                 
               
@@ -51,8 +52,9 @@ public class PreguntaTest {
                 PreguntaDAO daote= fabricate.metodoDAO();
                 
 		Pregunta objPr= new Pregunta();
-                objPr.setIdPregunta(1);
-                objPr.setTipopregunta(TipoPregunta.L);
+                objPr.setIdPregunta(17);
+                objPr.getEncuesta().setIdEncuesta(1);
+                objPr.setTipopregunta(TipoPreguntas.L);
 		 objPr.setDescripcion("edeherrrr");
               
                  Pregunta pregu=daote.modificar(objPr);
@@ -66,7 +68,7 @@ public class PreguntaTest {
                PreguntaDAO daote= fabricate.metodoDAO();
                 
 		Pregunta objPr= new Pregunta();
-		 objPr.setIdPregunta(2);
+		 objPr.setIdPregunta(18);
               
                  Pregunta Pregu=daote.leerxid(objPr);
 	 System.out.println(" "+Pregu.toString());

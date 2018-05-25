@@ -204,5 +204,42 @@ public class GradosDAOJDBC implements GradosDAO{
         }
         return true; 
     }
+
+    @Override
+    public Grados[] leertodoxEscuela(Grados objGr) throws DAOException {
+        try  {
+             CallableStatement st=con.prepareCall("{call sp_grados_bcoxEscuela(?)}");
+                st.setInt(1, objGr.getEscuela().getIdEscuela());
+                
+              ResultSet rs = st.executeQuery();
+                      
+            ArrayList<Grados> tribs = new ArrayList<>(); 
+            
+            while (rs.next()) {
+                tribs.add(
+                        
+                      new Grados(
+                            rs.getInt("idGrados"),
+                            new Escuela(
+                            rs.getInt("idEscuela"),
+                                new Facultad (
+                                    rs.getInt("idFacultad"),
+                                    rs.getString("descripcion1"),
+                                    Estados.valueOf(rs.getString("estado1"))
+                                ),
+                            rs.getString("descripcion2"),
+                            Estados.valueOf(rs.getString("estado2"))
+                            ),
+                            rs.getString("descripcion"),
+                            Estados.valueOf( rs.getString("estado"))
+                     ));
+            }
+            return tribs.toArray(new Grados[0]);
+        } catch (SQLException se) {
+            
+            throw new DAOException("Error obteniedo todos los grados en DAO: " 
+                    + se.getMessage(), se);
+        }  
+    }
     
 }

@@ -8,6 +8,7 @@ package test;
 import com.egresados2016.dao.factory.PreguntaEgresadoDAOFactory;
 import com.egresados2016.dao.interfaces.PreguntaEgresadoDAO;
 import com.egresados2016.dao.jdbc.DAOException;
+import com.egresados2016.enums.Afirmacion;
 import com.egresados2016.modelo.PreguntaEgresado;
 import java.text.ParseException;
 
@@ -30,7 +31,7 @@ public class PreguntaEgresadoTest {
 //        leertodoxidpregunta();
 //        leertodoxidrespuesta();
 //        eliminar();
-        destruir();
+//        destruir();
         
     }
      public static void crear() throws DAOException
@@ -41,9 +42,10 @@ public class PreguntaEgresadoTest {
 		PreguntaEgresado objPrE= new PreguntaEgresado();
                 
             
-                 objPrE.getPregunta().setIdPregunta(1);
-                 objPrE.getEgresado().setIdEgresado(5);
+                 objPrE.getPregunta().setIdPregunta(20);
+                 objPrE.getEgresado().setIdEgresado(1);
                  objPrE.getRespuesta().setIdRespuesta(1);
+                 objPrE.setAfirmacion(Afirmacion.ON);
                  
             
                  PreguntaEgresado preegre=daote.crear(objPrE);
@@ -59,11 +61,11 @@ public class PreguntaEgresadoTest {
                 
 		PreguntaEgresado objPrE= new PreguntaEgresado();
                 
-                 objPrE.setIdPreguntaEgresado(1);
-                 objPrE.getPregunta().setIdPregunta(1);
-                 objPrE.getEgresado().setIdEgresado(5);
-                 objPrE.getRespuesta().setIdRespuesta(7);
-                 
+                 objPrE.setIdPreguntaEgresado(7);
+                 objPrE.getPregunta().setIdPregunta(18);
+                 objPrE.getEgresado().setIdEgresado(1);
+                 objPrE.getRespuesta().setIdRespuesta(1);
+                 objPrE.setAfirmacion(Afirmacion.OF);
             
                  PreguntaEgresado preegre=daote.modificar(objPrE);
 	 System.out.println(" "+preegre.toString());
@@ -76,7 +78,7 @@ public class PreguntaEgresadoTest {
                    PreguntaEgresadoDAO daote= fabricate.metodoDAO();
                 
 		   PreguntaEgresado objPrE= new PreguntaEgresado();
-		 objPrE.setIdPreguntaEgresado(2);
+		 objPrE.setIdPreguntaEgresado(1);
               
                    PreguntaEgresado preegre=daote.leerxid(objPrE);
 	 System.out.println(" "+preegre.toString());
@@ -104,7 +106,7 @@ public class PreguntaEgresadoTest {
                     PreguntaEgresadoDAO daote= fabricate.metodoDAO();
                    
                      PreguntaEgresado objPrE= new      PreguntaEgresado();
-		 objPrE.getEgresado().setIdEgresado(5);
+		 objPrE.getEgresado().setIdEgresado(1);
        
 	    PreguntaEgresado[] preegre=daote.leertodoxidEgresado(objPrE);
 	  
@@ -121,7 +123,7 @@ public class PreguntaEgresadoTest {
 		    PreguntaEgresadoDAOFactory fabricate= new     PreguntaEgresadoDAOFactory();
                     PreguntaEgresadoDAO daote= fabricate.metodoDAO();
           PreguntaEgresado objPrE= new      PreguntaEgresado();
-		 objPrE.getPregunta().setIdPregunta(3);
+		 objPrE.getPregunta().setIdPregunta(17);
 	    PreguntaEgresado[] preegre=daote.leertodoxidPregunta(objPrE);
 	  
 	  for(   PreguntaEgresado preegre1:preegre)
@@ -137,7 +139,7 @@ public class PreguntaEgresadoTest {
 		    PreguntaEgresadoDAOFactory fabricate= new     PreguntaEgresadoDAOFactory();
                     PreguntaEgresadoDAO daote= fabricate.metodoDAO();
           PreguntaEgresado objPrE= new      PreguntaEgresado();
-		 objPrE.getRespuesta().setIdRespuesta(7);
+		 objPrE.getRespuesta().setIdRespuesta(1);
 	    PreguntaEgresado[] preegre=daote.leertodoxidRespuesta(objPrE);
 	  
 	  for(   PreguntaEgresado preegre1:preegre)

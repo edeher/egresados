@@ -1,0 +1,48 @@
+<%-- any content can be specified here e.g.: --%>
+<%@page import="com.egresados2016.modelo.Usuario"%>
+<%@ page pageEncoding="UTF-8" %>
+<%
+         
+          Usuario   usu=(Usuario)session.getAttribute("sesion");
+            if(usu==null){%>
+        <jsp:forward page="../JSPsession/sesioninvalida.jsp"/>
+        
+        
+    <%}%>
+<div class="top_nav">
+
+        <div class="nav_menu">
+          <nav class="" role="navigation">
+            <div class="nav toggle">
+              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <img src="../images/LOGO UNIA.png" alt=""><%=usu.getUsuario() %>-<%=usu.getTipoUsuario().getNom() %>
+                  <span class=" fa fa-angle-down"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
+                  
+                  <li><a href=""><i class="badge btn-default"></i>
+                          
+                          <form action="../UsuarioController?accion=cerrarsesion" name="f" method="post">
+                                        <input  class="button" type="submit" value="cerrar sesion" />
+                                        
+                                    </form>
+                          
+                         
+                      
+                      </a>
+                  </li>
+                </ul>
+              </li>
+
+              
+
+            </ul>
+          </nav>
+        </div>
+
+      </div>

@@ -31,7 +31,8 @@ public class GradoEgresadoTest {
 //        leertodoxgrado();
 //        leertodoxegresado();
 //        eliminar();
-        destruir();
+//        destruir();
+
     }
      public static void crear() throws DAOException, ParseException
 	{
@@ -91,13 +92,25 @@ public class GradoEgresadoTest {
                    GradoEgresadoDAO daote= fabricate.metodoDAO();
                 
 		   GradoEgresado objGrE= new    GradoEgresado();
-		 objGrE.setIdGradoEgresado(2);
+		 objGrE.setIdGradoEgresado(1);
               
                    GradoEgresado graegre=daote.leerxid(objGrE);
 	 System.out.println(" "+graegre.toString());
 		
 		}
-     
+      public static void leerxidxids()throws DAOException
+	{
+		   GradoEgresadoDAOFactory fabricate= new    GradoEgresadoDAOFactory();
+                   GradoEgresadoDAO daote= fabricate.metodoDAO();
+                
+		   GradoEgresado objGrE= new    GradoEgresado();
+                   objGrE.setIdGradoEgresado(4);
+		 objGrE.getEgresado().setIdEgresado(1);
+              
+                   GradoEgresado graegre=daote.leerxidXids(objGrE);
+	 System.out.println(" "+graegre.toString());
+		
+		}
        public static void leertodo()throws DAOException
 	{
 		   GradoEgresadoDAOFactory fabricate= new    GradoEgresadoDAOFactory();

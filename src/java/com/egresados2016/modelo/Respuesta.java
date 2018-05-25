@@ -6,6 +6,7 @@
 package com.egresados2016.modelo;
 
 import com.egresados2016.enums.Estados;
+import com.egresados2016.enums.Grupo;
 
 /**
  *
@@ -13,64 +14,58 @@ import com.egresados2016.enums.Estados;
  */
 public class Respuesta {
     private int idRespuesta;
+    private Grupo grupo;
     private String descripcion;
     private Estados estado;
 
     public Respuesta() {
     }
 
-    public Respuesta(int idRespuesta, String descripcion, Estados estado) {
+    public Respuesta(int idRespuesta, Grupo grupo, String descripcion, Estados estado) {
         this.idRespuesta = idRespuesta;
+        this.grupo = grupo;
         this.descripcion = descripcion;
         this.estado = estado;
     }
 
     @Override
     public String toString() {
-        return "Respuesta{" + "idRespuesta=" + idRespuesta + ", descripcion=" + descripcion + ", estado=" + estado + '}';
+        return "Respuesta{" + "idRespuesta=" + idRespuesta + ", grupo=" + grupo + ", descripcion=" + descripcion + ", estado=" + estado + '}';
     }
-
     
     
-    /**
-     * @return the idRespuesta
-     */
+    
     public int getIdRespuesta() {
         return idRespuesta;
     }
 
-    /**
-     * @param idRespuesta the idRespuesta to set
-     */
     public void setIdRespuesta(int idRespuesta) {
         this.idRespuesta = idRespuesta;
     }
 
-    /**
-     * @return the descripcion
-     */
+    public Grupo getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
 
-    /**
-     * @param descripcion the descripcion to set
-     */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    /**
-     * @return the estado
-     */
     public Estados getEstado() {
         return estado;
     }
 
-    /**
-     * @param estado the estado to set
-     */
     public void setEstado(Estados estado) {
         this.estado = estado;
     }
+
+    
 }

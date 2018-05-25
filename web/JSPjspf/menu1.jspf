@@ -1,0 +1,42 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+ <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+            <div class="menu_section">
+              
+              <ul class="nav side-menu">
+                  <li><a href="../JSPfrom/index.jsp"><i class="fa fa-home">
+                      
+                  </i> Encuesta<span class="fa fa-long-arrow-right"></span></a>
+                 
+                </li>
+                <li><a href="../JSPfrom/egresados.jsp"><i class="fa fa-user"></i> Egresados<span class="fa fa-long-arrow-right"></span></a>
+                  
+                </li>
+                <li><a href="../JSPfrom/Preguntas.jsp"><i class="fa fa-copy "></i> Preguntas <span class="fa fa-chevron-down"></span></a>
+                  
+                 
+                </li>
+                 <li><a href="../JSPfrom/Respuestas.jsp"><i class="fa fa-paperclip"></i> Respuestas <span class="fa fa-chevron-down"></span></a>
+                 
+                </li>
+              
+                <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu" style="display: none">
+                    <li><a href="chartjs.html">Chart JS</a>
+                    </li>
+                    <li><a href="chartjs2.html">Chart JS2</a>
+                    </li>
+                    <li><a href="morisjs.html">Moris JS</a>
+                    </li>
+                    <li><a href="echarts.html">ECharts </a>
+                    </li>
+                    <li><a href="other_charts.html">Other Charts </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            
+
+          </div>

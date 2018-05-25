@@ -17,6 +17,7 @@ public interface EgresadoDAO {
     public Egresado modificar (Egresado objE)throws DAOException;
     public Egresado leerxid(Egresado objE)throws DAOException;
     public Egresado []leertodo()throws DAOException;
+    public Egresado []egresados_sin_encuestar()throws DAOException;
     public boolean eliminar (Egresado objE)throws DAOException;
     public boolean destruir(Egresado objE)throws DAOException;
 }

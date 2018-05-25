@@ -30,9 +30,9 @@ public class TrabajosTest {
 //        modificar();
 //        leerxid();
 //        leertodo();
-//        leertodoxidEgresado();
+        leertodoxidEgresado();
 //        eliminar();
-        destruir();
+//        destruir();
     }
     public static void crear() throws DAOException, ParseException
 	{

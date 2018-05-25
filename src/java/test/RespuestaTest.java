@@ -8,6 +8,7 @@ package test;
 import com.egresados2016.dao.factory.RespuestaDAOFactory;
 import com.egresados2016.dao.interfaces.RespuestaDAO;
 import com.egresados2016.dao.jdbc.DAOException;
+import com.egresados2016.enums.Grupo;
 import com.egresados2016.modelo.Respuesta;
 
 /**
@@ -24,9 +25,9 @@ public class RespuestaTest {
 //        crear();
 //        modificar();
 //        leerxid();
-//        leertodo();
+        leertodo();
 //        eliminar();
-        destruir();
+//        destruir();
     }
      public static void crear() throws DAOException
 	{
@@ -34,6 +35,7 @@ public class RespuestaTest {
                 RespuestaDAO daote= fabricate.metodoDAO();
                 
 		Respuesta objRe= new Respuesta();
+                objRe.setGrupo(Grupo.NO);
 		 objRe.setDescripcion("moralesss");
               
                 
@@ -49,9 +51,9 @@ public class RespuestaTest {
                 RespuestaDAO daote= fabricate.metodoDAO();
                 
 		Respuesta objRe= new Respuesta();
-                objRe.setIdRespuesta(1);
-               
-		 objRe.setDescripcion("edeherrrr");
+                objRe.setIdRespuesta(16);
+                objRe.setGrupo(Grupo.NO);
+		 objRe.setDescripcion("ede");
       
                  Respuesta autorr=daote.modificar(objRe);
 	 System.out.println(" "+autorr.toString());

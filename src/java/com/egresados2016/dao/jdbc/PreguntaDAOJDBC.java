@@ -7,7 +7,8 @@ package com.egresados2016.dao.jdbc;
 
 import com.egresados2016.dao.interfaces.PreguntaDAO;
 import com.egresados2016.enums.Estados;
-import com.egresados2016.enums.TipoPregunta;
+import com.egresados2016.enums.TipoPreguntas;
+import com.egresados2016.modelo.Encuesta;
 import com.egresados2016.modelo.Pregunta;
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -28,9 +29,10 @@ private final Connection con;
     @Override
     public Pregunta crear(Pregunta objPr) throws DAOException {
        try{
-        CallableStatement st=con.prepareCall("{call sp_pregunta_n(?,?)}");
-                            st.setString(1,objPr.getTipopregunta().name());
-                            st.setString(2,objPr.getDescripcion() );
+        CallableStatement st=con.prepareCall("{call sp_pregunta_n(?,?,?)}");
+                            st.setInt(1, objPr.getEncuesta().getIdEncuesta());
+                            st.setString(2,objPr.getTipopregunta().name());
+                            st.setString(3,objPr.getDescripcion() );
                           
              ResultSet rs = st.executeQuery();
             if (!rs.next()) {
@@ -39,7 +41,13 @@ private final Connection con;
            return (
                     new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                             new Encuesta(
+                            rs.getInt("idEncuesta"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado1"))
+                                    ),
+                           
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion"),
                             Estados.valueOf(rs.getString("estado"))
                    
@@ -56,10 +64,11 @@ private final Connection con;
     @Override
     public Pregunta modificar(Pregunta objPr) throws DAOException {
         try{
-        CallableStatement st=con.prepareCall("{call sp_pregunta_m(?,?,?)}");
+        CallableStatement st=con.prepareCall("{call sp_pregunta_m(?,?,?,?)}");
                             st.setInt(1,objPr.getIdPregunta() );
-                            st.setString(2, objPr.getTipopregunta().name());
-                            st.setString(3,objPr.getDescripcion() );
+                             st.setInt(2, objPr.getEncuesta().getIdEncuesta());
+                            st.setString(3, objPr.getTipopregunta().name());
+                            st.setString(4,objPr.getDescripcion() );
                           
              ResultSet rs = st.executeQuery();
             if (!rs.next()) {
@@ -68,7 +77,12 @@ private final Connection con;
            return (
                     new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                            new Encuesta(
+                            rs.getInt("idEncuesta"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado1"))
+                                    ),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion"),
                             Estados.valueOf(rs.getString("estado"))
                    
@@ -96,7 +110,12 @@ private final Connection con;
            return (
                     new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                            new Encuesta(
+                            rs.getInt("idEncuesta"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado1"))
+                                    ),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion"),
                             Estados.valueOf(rs.getString("estado"))
                    
@@ -120,11 +139,14 @@ private final Connection con;
             ArrayList<Pregunta> tribs = new ArrayList<>(); 
             
             while (rs.next()) {
-                tribs.add(
-                        
-                     new Pregunta (
+                tribs.add(new Pregunta (
                             rs.getInt("idPregunta"),
-                            TipoPregunta.valueOf(rs.getString("TipoPregunta")),
+                        new Encuesta(
+                            rs.getInt("idEncuesta"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado1"))
+                                    ),
+                            TipoPreguntas.valueOf(rs.getString("TipoPregunta")),
                             rs.getString("descripcion"),
                             Estados.valueOf(rs.getString("estado"))
                    
