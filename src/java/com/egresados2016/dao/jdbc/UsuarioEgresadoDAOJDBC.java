@@ -30,7 +30,7 @@ public class UsuarioEgresadoDAOJDBC implements UsuarioEgresadoDAO{
     public UsuarioEgresadoDAOJDBC(){
         this.con=DBManager.getConnection();
     }
-    //metodos para cuentas de usuario de egresados
+    //metodos para cuentas de usuario de egresados, desde linux netbeans
 
     @Override
     public UsuarioEgresado crear(UsuarioEgresado ogbjUsuEgre) throws DAOException {
