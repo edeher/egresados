@@ -26,7 +26,7 @@ import java.sql.SQLException;
     static private final String url="jdbc:mysql://localhost:3306/egresados";
     static private final String driver="com.mysql.jdbc.Driver";
     static private final String user="root";
-    static private final String pass="masterUNIA"
+    static private final String pass="poderoso"
             + "";
     
     static private String error;
