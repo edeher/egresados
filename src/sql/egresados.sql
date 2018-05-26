@@ -437,6 +437,33 @@ INSERT INTO `usuario` VALUES (8,'pedro','¢!Ωç˝\»Zã/¶÷ù\œ','AD','A');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `usuarioegresado`
+--
+
+DROP TABLE IF EXISTS `usuarioegresado`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usuarioegresado` (
+  `idUsuarioEgresado` int(11) NOT NULL AUTO_INCREMENT,
+  `idEgresado` int(11) DEFAULT NULL,
+  `usuario` varchar(45) DEFAULT NULL,
+  `contrasena` blob,
+  `estado` char(1) DEFAULT NULL,
+  PRIMARY KEY (`idUsuarioEgresado`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarioegresado`
+--
+
+LOCK TABLES `usuarioegresado` WRITE;
+/*!40000 ALTER TABLE `usuarioegresado` DISABLE KEYS */;
+INSERT INTO `usuarioegresado` VALUES (2,1,'pepito2','B\ÿ\“$^\Í¸â©-\ÊºÛ','A'),(3,2,'pepito2','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(4,3,'pepito2','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(5,4,'pepito2','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(6,5,'mayong','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(7,6,'mayong','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(8,0,'pepito2','@nu+ï-Å7Å\⁄”ß§∫','A');
+/*!40000 ALTER TABLE `usuarioegresado` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping events for database 'egresados'
 --
 
@@ -6794,6 +6821,235 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_usuarioEgresado_bco` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuarioEgresado_bco`(
+
+	in VidUsuarioEgresado int(11)
+)
+begin
+		select * from (SELECT idUsuarioEgresado FROM usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado and estado='A') as s0,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select idEgresado  from egresado where idEgresado=(select idEgresado from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado) and egresado.estado='A') as s1,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select distrito.idDistrito as idDistritoNac, 
+			provincia.idProvincia as idProvinciaNac,
+				departamento.idDepartamento as idDepartamentoNac,
+				departamento.descripcion as departamentoNac,
+				departamento.estado as estado1,
+			provincia.descripcion as provinciaNac,
+			provincia.estado as estado2,
+		distrito.descripcion as distritoNac,
+		distrito.estado as estado3
+        
+from distrito,provincia,departamento 
+
+where distrito.idDistrito=(select idDistritoNac from egresado where idEgresado=(select idEgresado from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado)) and
+distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento) as s2,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select distrito.idDistrito as idDistritoRec , 
+			provincia.idProvincia as idProvinciaRec,
+				departamento.idDepartamento as idDepartamentoRec,
+				departamento.descripcion as departamentoRec,
+				departamento.estado as estado4,
+			provincia.descripcion as ProvinciaRec,
+			provincia.estado as estado5,
+		distrito.descripcion as distritoRec,
+		distrito.estado as estado6
+        
+        from distrito,provincia,departamento 
+        
+	where distrito.idDistrito=(select idDistritoRec from egresado where idEgresado=(select idEgresado from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado)) and 
+distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento ) as s3,	
+/*------------------------------------------------------------------------*/
+(select escuela.idEscuela , facultad.idFacultad, facultad.descripcion as descripcion1,
+facultad.estado as estado0, escuela.descripcion,escuela.estado as estado00
+ from escuela, facultad ,egresado
+
+where  escuela.idFacultad=facultad.idFacultad
+ and egresado.idEscuela=escuela.idEscuela and egresado.idEgresado=(select idEgresado from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado)) as s4,
+ /*------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------*/  
+(select nombres, apellidos,fechaNac,edad,dni, sexo, direccion,telefono1,telefono2,correo,anioIngreso,anioEgreso,nroHijos,estadoCivil,estado as estado10
+from egresado where idEgresado=(select idEgresado from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado) and  egresado.estado='A'  ) as s5,
+/*-----------------------------------------------------------------------------------------------------------------------*/                
+(select usuario,estado FROM   usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado  and estado='A')as s6;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_usuarioEgresado_modcontrasena` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuarioEgresado_modcontrasena`(
+			in VidUsuarioEgresado int(11),
+			in Vusuario varchar(45),
+            in Vcontrasena varchar(45),
+            in Vcontrasenanew varchar(45)
+)
+begin
+	
+if ((select usuario from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado)=Vusuario and (CAST(AES_DECRYPT((select contrasena from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado),'egresado2016') AS CHAR(50)))=Vcontrasena)then
+update usuarioegresado set
+
+contrasena=AES_ENCRYPT(Vcontrasenanew,'egresado2016')
+where idUsuarioEgresado=VidUsuarioEgresado;
+
+
+select * from (SELECT idUsuarioEgresado FROM usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado and estado='A') as s0,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select idEgresado  from egresado where idEgresado=(select idEgresado from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado) and egresado.estado='A') as s1,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select distrito.idDistrito as idDistritoNac, 
+			provincia.idProvincia as idProvinciaNac,
+				departamento.idDepartamento as idDepartamentoNac,
+				departamento.descripcion as departamentoNac,
+				departamento.estado as estado1,
+			provincia.descripcion as provinciaNac,
+			provincia.estado as estado2,
+		distrito.descripcion as distritoNac,
+		distrito.estado as estado3
+        
+from distrito,provincia,departamento 
+
+where distrito.idDistrito=(select idDistritoNac from egresado where idEgresado=(select idEgresado from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado)) and
+distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento) as s2,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select distrito.idDistrito as idDistritoRec , 
+			provincia.idProvincia as idProvinciaRec,
+				departamento.idDepartamento as idDepartamentoRec,
+				departamento.descripcion as departamentoRec,
+				departamento.estado as estado4,
+			provincia.descripcion as ProvinciaRec,
+			provincia.estado as estado5,
+		distrito.descripcion as distritoRec,
+		distrito.estado as estado6
+        
+        from distrito,provincia,departamento 
+        
+	where distrito.idDistrito=(select idDistritoRec from egresado where idEgresado=(select idEgresado from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado)) and 
+distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento ) as s3,	
+/*------------------------------------------------------------------------*/
+(select escuela.idEscuela , facultad.idFacultad, facultad.descripcion as descripcion1,
+facultad.estado as estado0, escuela.descripcion,escuela.estado as estado00
+ from escuela, facultad ,egresado
+
+where  escuela.idFacultad=facultad.idFacultad
+ and egresado.idEscuela=escuela.idEscuela and egresado.idEgresado=(select idEgresado from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado)) as s4,
+ /*------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------*/  
+(select nombres, apellidos,fechaNac,edad,dni, sexo, direccion,telefono1,telefono2,correo,anioIngreso,anioEgreso,nroHijos,estadoCivil,estado as estado10
+from egresado where idEgresado=(select idEgresado from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado) and  egresado.estado='A'  ) as s5,
+/*-----------------------------------------------------------------------------------------------------------------------*/                
+(select usuario,estado FROM   usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado  and estado='A')as s6;
+
+end if;
+
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_usuarioEgresado_n` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuarioEgresado_n`(
+			in VidEgresado int (11),
+			in Vusuario varchar(45),
+            in Vcontrasena varchar(45)
+)
+begin
+declare id integer;
+if not exists (select * from usuarioegresado where usuarioegresado.idEgresado=VidEgresado ) then
+		insert into usuarioegresado(idEgresado,usuario,contrasena,estado)
+		values(VidEgresado,Vusuario,AES_ENCRYPT(Vcontrasena,'egresado2016'),'A');
+        set id=last_insert_id();
+end if;
+
+
+select * from (SELECT idUsuarioEgresado FROM usuarioegresado where idUsuarioEgresado=id and estado='A') as s0,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select idEgresado  from egresado where idEgresado=VidEgresado and egresado.estado='A') as s1,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select distrito.idDistrito as idDistritoNac, 
+			provincia.idProvincia as idProvinciaNac,
+				departamento.idDepartamento as idDepartamentoNac,
+				departamento.descripcion as departamentoNac,
+				departamento.estado as estado1,
+			provincia.descripcion as provinciaNac,
+			provincia.estado as estado2,
+		distrito.descripcion as distritoNac,
+		distrito.estado as estado3
+        
+from distrito,provincia,departamento 
+
+where distrito.idDistrito=(select idDistritoNac from egresado where idEgresado=VidEgresado) and
+distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento) as s2,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select distrito.idDistrito as idDistritoRec , 
+			provincia.idProvincia as idProvinciaRec,
+				departamento.idDepartamento as idDepartamentoRec,
+				departamento.descripcion as departamentoRec,
+				departamento.estado as estado4,
+			provincia.descripcion as ProvinciaRec,
+			provincia.estado as estado5,
+		distrito.descripcion as distritoRec,
+		distrito.estado as estado6
+        
+        from distrito,provincia,departamento 
+        
+	where distrito.idDistrito=(select idDistritoRec from egresado where idEgresado=VidEgresado) and 
+distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento ) as s3,	
+/*------------------------------------------------------------------------*/
+(select escuela.idEscuela , facultad.idFacultad, facultad.descripcion as descripcion1,
+facultad.estado as estado0, escuela.descripcion,escuela.estado as estado00
+ from escuela, facultad ,egresado
+
+where  escuela.idFacultad=facultad.idFacultad
+ and egresado.idEscuela=escuela.idEscuela and egresado.idEgresado=VidEgresado) as s4,
+ /*------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------*/  
+(select nombres, apellidos,fechaNac,edad,dni, sexo, direccion,telefono1,telefono2,correo,anioIngreso,anioEgreso,nroHijos,estadoCivil,estado as estado10
+from egresado where idEgresado=VidEgresado and  egresado.estado='A'  ) as s5,
+/*-----------------------------------------------------------------------------------------------------------------------*/                
+(select usuario,estado FROM   usuarioegresado where idUsuarioEgresado=id and estado='A')as s6;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `sp_usuario_bco` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -6924,4 +7180,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-25 13:23:52
+-- Dump completed on 2018-05-26  2:04:07

@@ -60,10 +60,10 @@ private final Connection con;
         try{
         CallableStatement st=con.prepareCall("{call sp_usuario_modcontrasena(?,?,?,?,?)}");
                              st.setInt(1,objUsu.getIdUsuario() );
-                            st.setString(2,objUsu.getUsuario() );
+                             st.setString(2,objUsu.getUsuario() );
                              st.setString(3,objUsu.getContrasena() );
                              st.setString(4, contrasenanew);
-                              st.setString(5,objUsu.getTipoUsuario().name() );
+                             st.setString(5,objUsu.getTipoUsuario().name() );
                           
              ResultSet rs = st.executeQuery();
             if (!rs.next()) {
