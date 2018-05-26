@@ -336,7 +336,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_1(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_1();
-        System.out.println("entrando a pregunta 1");
+        
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -357,7 +357,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_2(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_2();
-        System.out.println("entrando a pregunta ");
+        
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -377,7 +377,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_3(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_3();
-        System.out.println("entrando a pregunta ");
+       
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -397,7 +397,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_4(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_4();
-        System.out.println("entrando a pregunta ");
+        
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -417,7 +417,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_5(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_5();
-        System.out.println("entrando a pregunta ");
+       
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -437,7 +437,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_6(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_6();
-        System.out.println("entrando a pregunta 1");
+       
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -457,7 +457,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_7(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_7();
-        System.out.println("entrando a pregunta 1");
+       
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -477,7 +477,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_8(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_8();
-        System.out.println("entrando a pregunta 1");
+        
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -497,7 +497,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_9(HttpServletRequest request, HttpServletResponse response) throws IOException, DAOException {
         Estadistica[] esta = daote.pregunta_9();
-        System.out.println("entrando a pregunta 1");
+       
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -517,7 +517,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_10(HttpServletRequest request, HttpServletResponse response) throws IOException, DAOException {
         Estadistica[] esta = daote.pregunta_10();
-        System.out.println("entrando a pregunta 1");
+       
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -537,7 +537,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_11(HttpServletRequest request, HttpServletResponse response) throws IOException, DAOException {
         Estadistica[] esta = daote.pregunta_11();
-        System.out.println("entrando a pregunta 1");
+        
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -557,7 +557,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_12(HttpServletRequest request, HttpServletResponse response) throws IOException, DAOException {
         Estadistica[] esta = daote.pregunta_12();
-        System.out.println("entrando a pregunta 1");
+        
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -577,7 +577,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_13(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_13();
-        System.out.println("entrando a pregunta 1");
+        
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -597,7 +597,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_14(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_14();
-        System.out.println("entrando a pregunta 1");
+       
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -617,7 +617,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_15(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_15();
-        System.out.println("entrando a pregunta 1");
+        
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -637,7 +637,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_16(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_16();
-        System.out.println("entrando a pregunta 1");
+        
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -657,7 +657,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_17(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_17();
-        System.out.println("entrando a pregunta 1");
+        
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
 
@@ -696,7 +696,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_19_2(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_19_2();
-        System.out.println("entrando a pregunta 23");
+        
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
         for (Estadistica esta1 : esta) {
@@ -716,7 +716,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_20_3(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_20_3();
-         System.out.println("entrando a pregunta 23");
+       
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
         for (Estadistica esta1 : esta) {
@@ -771,7 +771,7 @@ public class EstadisticaController extends HttpServlet {
 
     private void pregunta_23_6(HttpServletRequest request, HttpServletResponse response) throws DAOException, IOException {
         Estadistica[] esta = daote.pregunta_23_6();
-        System.out.println("entrando a pregunta 23");
+       
         JsonArrayBuilder arraybuilder = Json.createArrayBuilder();
         JsonObjectBuilder objbuilder = Json.createObjectBuilder();
         for (Estadistica esta1 : esta) {
