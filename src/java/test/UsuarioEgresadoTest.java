@@ -22,21 +22,26 @@ public class UsuarioEgresadoTest {
     public static void main(String[] args) throws DAOException {
         // TODO code application logic here
 //        crear();
-        modcontrasena();
+//        modcontrasena();
+//        leerxid();
+//        leertodo();
+validar();
     }
      public static void crear() throws DAOException
 	{
 		UsuarioEgresadoDAOFactory fabricate= new UsuarioEgresadoDAOFactory();
                 UsuarioEgresadoDAO daote= fabricate.metodoDAO();
                 
+                 String contrasenanew="poderoso";
+                
 		UsuarioEgresado objUsu= new UsuarioEgresado();
                 
-                    objUsu.getEgresado().setIdEgresado(6);
-                    objUsu.setUsuario("mayong");
+                    objUsu.getEgresado().setIdEgresado(11);
+                    objUsu.setUsuario("mayong3");
                     objUsu.setContrasena("poderoso");
                     
             
-                UsuarioEgresado usuario=daote.crear(objUsu);
+                UsuarioEgresado usuario=daote.crear(objUsu,contrasenanew);
 	 System.out.println(" "+usuario.toString());
          
          
@@ -49,7 +54,7 @@ public class UsuarioEgresadoTest {
                 UsuarioEgresadoDAO daote= fabricate.metodoDAO();
                 
                 String contrasenanew="poderoso144";
-                        
+                  String contrasenanew1="poderoso144";      
 		UsuarioEgresado objUsu= new UsuarioEgresado();
                     objUsu.setIdUsuarioEgresado(2);
                     objUsu.setUsuario("pepito2");
@@ -57,10 +62,57 @@ public class UsuarioEgresadoTest {
                     
                     
             
-                 UsuarioEgresado usuario=daote.modcontraseña(objUsu, contrasenanew);
+                 UsuarioEgresado usuario=daote.modcontraseña(objUsu, contrasenanew,contrasenanew1);
 	 System.out.println(" "+usuario.toString());
          
          
 		
 		}
+       
+         public static void leerxid()throws DAOException
+	{
+		  UsuarioEgresadoDAOFactory fabricate= new    UsuarioEgresadoDAOFactory();
+                   UsuarioEgresadoDAO daote= fabricate.metodoDAO();
+                
+		  UsuarioEgresado objUsu= new  UsuarioEgresado();
+		 objUsu.setIdUsuarioEgresado(2);
+              
+                   UsuarioEgresado usu=daote.leerxid(objUsu);
+	 System.out.println(" "+usu.toString());
+		
+		}
+         
+         
+            public static void leertodo()throws DAOException
+	{
+		   UsuarioEgresadoDAOFactory fabricate= new    UsuarioEgresadoDAOFactory();
+                   UsuarioEgresadoDAO daote= fabricate.metodoDAO();
+                   
+                    
+		
+       
+	  UsuarioEgresado[] estu=daote.leertodo();
+	  
+	  for(   UsuarioEgresado estu1:estu)
+	  {
+	      
+	      System.out.println(" "+estu1.toString());
+	  
+	  }
+	 
+        }
+            
+            public static void validar()throws DAOException
+	{
+		 UsuarioEgresadoDAOFactory fabricate= new    UsuarioEgresadoDAOFactory();
+                   UsuarioEgresadoDAO daote= fabricate.metodoDAO();
+                
+		 UsuarioEgresado objUsu= new    UsuarioEgresado();
+		 objUsu.setUsuario("mayong3");
+                 objUsu.setContrasena("poderoso");
+              
+                   UsuarioEgresado usu=daote.validar(objUsu);
+	 System.out.println(" "+usu.toString());
+		
+		}   
 }

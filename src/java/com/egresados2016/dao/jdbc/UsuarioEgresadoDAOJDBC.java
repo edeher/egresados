@@ -20,6 +20,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -34,14 +35,14 @@ public class UsuarioEgresadoDAOJDBC implements UsuarioEgresadoDAO{
     //metodos para cuentas de usuario de egresados, desde linux netbeans
 
     @Override
-    public UsuarioEgresado crear(UsuarioEgresado ogbjUsuEgre) throws DAOException {
+    public UsuarioEgresado crear(UsuarioEgresado ogbjUsuEgre,String contrasenanew) throws DAOException {
         try {
             
-             CallableStatement st=con.prepareCall("{call sp_usuarioEgresado_n(?,?,?)}");
+             CallableStatement st=con.prepareCall("{call sp_usuarioEgresado_n(?,?,?,?)}");
                              st.setInt(1,ogbjUsuEgre.getEgresado().getIdEgresado() );
                              st.setString(2,ogbjUsuEgre.getUsuario() );
                              st.setString(3,ogbjUsuEgre.getContrasena() );
-                              
+                             st.setString(4, contrasenanew);
                           
              ResultSet rs = st.executeQuery();
             if (!rs.next()) {
@@ -132,14 +133,14 @@ public class UsuarioEgresadoDAOJDBC implements UsuarioEgresadoDAO{
     }
 
     @Override
-    public UsuarioEgresado modcontraseña(UsuarioEgresado ObjUsuEgre, String contrasenanew) throws DAOException {
+    public UsuarioEgresado modcontraseña(UsuarioEgresado ObjUsuEgre, String contrasenanew,String contrasenanew1) throws DAOException {
          try{
-        CallableStatement st=con.prepareCall("{call sp_usuarioEgresado_modcontrasena(?,?,?,?)}");
+        CallableStatement st=con.prepareCall("{call sp_usuarioEgresado_modcontrasena(?,?,?,?,?)}");
                              st.setInt(1,ObjUsuEgre.getIdUsuarioEgresado() );
                              st.setString(2,ObjUsuEgre.getUsuario() );
                              st.setString(3,ObjUsuEgre.getContrasena() );
                              st.setString(4, contrasenanew);
-                             
+                             st.setString(5, contrasenanew1);
                           
              ResultSet rs = st.executeQuery();
             if (!rs.next()) {
@@ -330,12 +331,200 @@ public class UsuarioEgresadoDAOJDBC implements UsuarioEgresadoDAO{
 
     @Override
     public UsuarioEgresado[] leertodo() throws DAOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try  {
+             CallableStatement st=con.prepareCall("{call sp_usuarioEgresado_all()}");
+           
+              ResultSet rs = st.executeQuery();
+                      
+            ArrayList<UsuarioEgresado> tribs = new ArrayList<>(); 
+            
+            while (rs.next()) {
+                tribs.add(
+                        
+                     new UsuarioEgresado (
+                            rs.getInt("idUsuarioEgresado"),
+                           new Egresado (
+                            rs.getInt("idEgresado"),
+                            new Distrito  (
+                            rs.getInt("idDistritoNac"),
+                            new Provincia(
+                                   rs.getInt("idProvinciaNac"),
+                                   new Departamento(
+                                           rs.getInt("idDepartamentoNac"),
+
+                                           rs.getString("departamentoNac"),
+
+                                           Estados.valueOf( rs.getString("estado1"))
+                                    ),
+                                   rs.getString("provinciaNac"),
+                                   Estados.valueOf( rs.getString("estado2"))
+                                   ),
+                            rs.getString("distritoNac"),
+                            Estados.valueOf(rs.getString("estado3"))
+                   
+                             ),
+                            new Distrito  (
+                            rs.getInt("idDistritoRec"),
+                            new Provincia(
+                                   rs.getInt("idProvinciaRec"),
+                                     new Departamento(
+                                           rs.getInt("idDepartamentoRec"),
+
+                                           rs.getString("departamentoRec"),
+
+                                           Estados.valueOf( rs.getString("estado4"))
+                                    ),
+
+                                   rs.getString("provinciaRec"),
+
+                                   Estados.valueOf( rs.getString("estado5"))
+                                ),
+                            rs.getString("distritoRec"),
+                            Estados.valueOf(rs.getString("estado6"))
+                   
+                             ),
+                             new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
+                             ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
+                            rs.getString("nombres"),
+                            rs.getString("apellidos"),
+                            rs.getDate("fechaNac"),
+                            rs.getInt("edad"),
+                            rs.getString("dni"),
+                            Sexo.valueOf( rs.getString("sexo")),
+                            rs.getString("direccion"),
+                            rs.getString("telefono1"),
+                            rs.getString("telefono2"),
+                            rs.getString("correo"),
+                           rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
+                            rs.getInt("nroHijos"),
+                            EstadoCivil.valueOf(rs.getString("estadoCivil")),
+                            Estados.valueOf(rs.getString("estado10"))
+                   
+                             ),
+                            
+                            rs.getString("usuario"),
+                            null,
+                            Estados.valueOf(rs.getString("estado"))
+                             )
+                
+                
+                );
+            }
+            return tribs.toArray(new UsuarioEgresado[0]);
+        } catch (SQLException se) {
+            
+            throw new DAOException("Error obteniedo todos los usuario egresados en DAO: " 
+                    + se.getMessage(), se);
+        }  
     }
 
     @Override
     public UsuarioEgresado validar(UsuarioEgresado ogbjUsuEgre) throws DAOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try{
+        CallableStatement st=con.prepareCall("{call sp_usuarioEgresado_validar(?,?)}");
+                            
+                            st.setString(1,ogbjUsuEgre.getUsuario() );
+                            st.setString(2, ogbjUsuEgre.getContrasena());
+                           
+                          
+             ResultSet rs = st.executeQuery();
+            if (!rs.next()) {
+                return null;
+            }
+           return (
+                    new UsuarioEgresado (
+                            rs.getInt("idUsuarioEgresado"),
+                           new Egresado (
+                            rs.getInt("idEgresado"),
+                            new Distrito  (
+                            rs.getInt("idDistritoNac"),
+                            new Provincia(
+                                   rs.getInt("idProvinciaNac"),
+                                   new Departamento(
+                                           rs.getInt("idDepartamentoNac"),
+
+                                           rs.getString("departamentoNac"),
+
+                                           Estados.valueOf( rs.getString("estado1"))
+                                    ),
+                                   rs.getString("provinciaNac"),
+                                   Estados.valueOf( rs.getString("estado2"))
+                                   ),
+                            rs.getString("distritoNac"),
+                            Estados.valueOf(rs.getString("estado3"))
+                   
+                             ),
+                            new Distrito  (
+                            rs.getInt("idDistritoRec"),
+                            new Provincia(
+                                   rs.getInt("idProvinciaRec"),
+                                     new Departamento(
+                                           rs.getInt("idDepartamentoRec"),
+
+                                           rs.getString("departamentoRec"),
+
+                                           Estados.valueOf( rs.getString("estado4"))
+                                    ),
+
+                                   rs.getString("provinciaRec"),
+
+                                   Estados.valueOf( rs.getString("estado5"))
+                                ),
+                            rs.getString("distritoRec"),
+                            Estados.valueOf(rs.getString("estado6"))
+                   
+                             ),
+                             new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
+                             ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
+                            rs.getString("nombres"),
+                            rs.getString("apellidos"),
+                            rs.getDate("fechaNac"),
+                            rs.getInt("edad"),
+                            rs.getString("dni"),
+                            Sexo.valueOf( rs.getString("sexo")),
+                            rs.getString("direccion"),
+                            rs.getString("telefono1"),
+                            rs.getString("telefono2"),
+                            rs.getString("correo"),
+                           rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
+                            rs.getInt("nroHijos"),
+                            EstadoCivil.valueOf(rs.getString("estadoCivil")),
+                            Estados.valueOf(rs.getString("estado10"))
+                   
+                             ),
+                            
+                            rs.getString("usuario"),
+                            null,
+                            Estados.valueOf(rs.getString("estado"))
+                             )
+                   
+                   
+                   );
+           } catch (SQLException se) {
+            
+            throw new DAOException("Error creando usuario egresado en DAO", se);
+        } 
+    
     }
     
 }

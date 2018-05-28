@@ -25,8 +25,8 @@ public class UsuarioTest {
         // TODO code application logic here
 //        crear();
 //        modcontrasena();
-//        leerxid();
-        validar();
+        leerxid();
+//        validar();
     }
     public static void crear() throws DAOException
 	{
@@ -71,7 +71,7 @@ public class UsuarioTest {
                    UsuarioDAO daote= fabricate.metodoDAO();
                 
 		  Usuario objUsu= new    Usuario();
-		 objUsu.setIdUsuario(1);
+		 objUsu.setIdUsuario(8);
               
                    Usuario usu=daote.leer(objUsu);
 	 System.out.println(" "+usu.toString());

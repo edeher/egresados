@@ -10,8 +10,8 @@ import com.egresados2016.modelo.UsuarioEgresado;
 
 
 public interface UsuarioEgresadoDAO {
-    public UsuarioEgresado crear(UsuarioEgresado ogbjUsuEgre)throws DAOException;
-    public UsuarioEgresado modcontraseña(UsuarioEgresado ObjUsuEgre, String contrasenanew) throws DAOException;
+    public UsuarioEgresado crear(UsuarioEgresado ogbjUsuEgre, String contrasenanew)throws DAOException;
+    public UsuarioEgresado modcontraseña(UsuarioEgresado ObjUsuEgre, String contrasenanew,String contrasenanew1) throws DAOException;
     public UsuarioEgresado leerxid(UsuarioEgresado ogbjUsuEgre)throws DAOException;
     public UsuarioEgresado[]leertodo()throws DAOException;
     public UsuarioEgresado validar (UsuarioEgresado ogbjUsuEgre)throws DAOException;
