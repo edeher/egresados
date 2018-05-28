@@ -26,13 +26,13 @@ public class EgresadoTest {
      */
     public static void main(String[] args) throws DAOException{
         // TODO code application logic here
-//        crear();
+        crear();
 //        modificar();
 //        leerxid();
 //        leertodo();
 //        eliminar();
 //        destruir();
-egresados_sin_encuestar();;
+//egresados_sin_encuestar();
     }
     public static void crear() throws DAOException
 	{
