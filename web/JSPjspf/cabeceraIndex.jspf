@@ -22,9 +22,9 @@
                   
               </li>
               
-<li class="">
+            <li class="">
                  
-                <a href="JSPsession/login.jsp" >
+                <a href="JSPsession/loginEgresado.jsp" >
                  
                   <span class="badge btn-default">
                       LOGIN</span>

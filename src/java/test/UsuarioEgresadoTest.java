@@ -26,12 +26,12 @@ public class UsuarioEgresadoTest {
      */
     public static void main(String[] args) throws DAOException, ParseException {
         // TODO code application logic here
-        crear_n1();
+//        crear_n1();
 //        crear();
 //        modcontrasena();
 //        leerxid();
 //        leertodo();
-//validar();
+validar();
     }
      public static void crear() throws DAOException
 	{
@@ -155,7 +155,7 @@ public class UsuarioEgresadoTest {
                    UsuarioEgresadoDAO daote= fabricate.metodoDAO();
                 
 		 UsuarioEgresado objUsu= new    UsuarioEgresado();
-		 objUsu.setUsuario("mayong3");
+		 objUsu.setUsuario("eponce");
                  objUsu.setContrasena("poderoso");
               
                    UsuarioEgresado usu=daote.validar(objUsu);

@@ -554,5 +554,95 @@ private final Connection con;
                     + se.getMessage(), se);
         }  
     }
+
+    @Override
+    public Egresado leerxDni(Egresado objE) throws DAOException {
+        try{
+        CallableStatement st=con.prepareCall("{call sp_egresado_bcoxdni(?)}");
+                            
+                             st.setString(1,objE.getDni());
+                              
+                              
+             ResultSet rs = st.executeQuery();
+            if (!rs.next()) {
+                return null;
+            }
+           return (
+                    new Egresado (
+                            rs.getInt("idEgresado"),
+                            new Distrito  (
+                            rs.getInt("idDistritoNac"),
+                            new Provincia(
+                                   rs.getInt("idProvinciaNac"),
+                                   new Departamento(
+                                           rs.getInt("idDepartamentoNac"),
+
+                                           rs.getString("departamentoNac"),
+
+                                           Estados.valueOf( rs.getString("estado1"))
+                                    ),
+                                   rs.getString("provinciaNac"),
+                                   Estados.valueOf( rs.getString("estado2"))
+                                   ),
+                            rs.getString("distritoNac"),
+                            Estados.valueOf(rs.getString("estado3"))
+                   
+                             ),
+                            new Distrito  (
+                            rs.getInt("idDistritoRec"),
+                            new Provincia(
+                                   rs.getInt("idProvinciaRec"),
+                                     new Departamento(
+                                           rs.getInt("idDepartamentoRec"),
+
+                                           rs.getString("departamentoRec"),
+
+                                           Estados.valueOf( rs.getString("estado4"))
+                                    ),
+
+                                   rs.getString("provinciaRec"),
+
+                                   Estados.valueOf( rs.getString("estado5"))
+                                ),
+                            rs.getString("distritoRec"),
+                            Estados.valueOf(rs.getString("estado6"))
+                   
+                             ),
+                            new Escuela(
+                           rs.getInt("idEscuela"),
+                    new Facultad (
+                            rs.getInt("idFacultad"),
+                            rs.getString("descripcion1"),
+                            Estados.valueOf(rs.getString("estado0"))
+                   
+                             ),
+                    rs.getString("descripcion"),
+                    Estados.valueOf(rs.getString("estado00"))
+                   ),
+                            rs.getString("nombres"),
+                            rs.getString("apellidos"),
+                            rs.getDate("fechaNac"),
+                            rs.getInt("edad"),
+                            rs.getString("dni"),
+                            Sexo.valueOf( rs.getString("sexo")),
+                            rs.getString("direccion"),
+                            rs.getString("telefono1"),
+                            rs.getString("telefono2"),
+                            rs.getString("correo"),
+                            rs.getString("anioIngreso"),
+                            rs.getString("anioEgreso"),
+                            rs.getInt("nroHijos"),
+                            EstadoCivil.valueOf(rs.getString("estadoCivil")),
+                            Estados.valueOf(rs.getString("estado"))
+                   
+                             )
+                   
+                   
+                   );
+           } catch (SQLException se) {
+            
+            throw new DAOException("Error creando egresado en DAO", se);
+        }   
+    }
     
 }

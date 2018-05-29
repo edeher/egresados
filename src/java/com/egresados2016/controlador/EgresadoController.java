@@ -66,6 +66,7 @@ public class EgresadoController extends HttpServlet {
             case "crear" : crear(request,response);break;
             case "modificar": modificar(request,response);break;
             case "obtenernoencuestados": obtenernoencuestados(request,response); break;
+            case "obtenerxdni":obtenerxdni(request,response);break;
         }
     }
 
@@ -162,7 +163,7 @@ public class EgresadoController extends HttpServlet {
          
          System.out.println("recibio");
        
-         objEgre.getDistritoNacimiento().setIdDistrito(Integer.parseInt(request.getParameter("distritoNa"))   );
+                objEgre.getDistritoNacimiento().setIdDistrito(Integer.parseInt(request.getParameter("distritoNa"))   );
                  objEgre.getDistritoResidencia().setIdDistrito(Integer.parseInt(request.getParameter("distritoRe")) );
                  objEgre.getEscuela().setIdEscuela(Integer.parseInt(request.getParameter("escuela")) );
                  objEgre.setNombres(request.getParameter("nombres").toString().toUpperCase());
@@ -260,6 +261,38 @@ public class EgresadoController extends HttpServlet {
             arrayEgresado.add(arrayDatosEgresado);
         }
         objbuilder.add("data", arrayEgresado);
+        JsonObject obj = objbuilder.build();
+        response.setContentType("application/json");
+       
+        try (PrintWriter pw = new PrintWriter(response.getOutputStream())) {
+            pw.println(obj.toString()); 
+        }
+    }
+
+    private void obtenerxdni(HttpServletRequest request, HttpServletResponse response) throws IOException, DAOException {
+        
+        Egresado objEgre=new Egresado();
+     
+        objEgre.setDni(request.getParameter("dni").trim());
+        
+        Egresado egre=daote.leerxDni(objEgre);
+       
+        JsonArrayBuilder  arraybuilder = Json.createArrayBuilder();  
+        JsonObjectBuilder objbuilder = Json.createObjectBuilder();                 
+         
+          
+              objbuilder.add("codigo",egre.getIdEgresado());    
+               objbuilder.add("nombres",egre.getNombres());    
+              objbuilder.add("apellidos",egre.getApellidos()); 
+               objbuilder.add("dni",egre.getDni());     
+              objbuilder.add("telefono",egre.getTelefono1());    
+               objbuilder.add("direccion",egre.getDireccion());     
+              objbuilder.add("correo",egre.getCorrero());   
+              
+              arraybuilder.add(objbuilder);     
+             
+       
+        objbuilder.add("egre",arraybuilder);
         JsonObject obj = objbuilder.build();
         response.setContentType("application/json");
        

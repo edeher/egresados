@@ -4,8 +4,8 @@
 <%@ page pageEncoding="UTF-8" %>
 <%
          
-          Usuario  usu=(Usuario)session.getAttribute("sesion");
-            if(usu==null){%>
+          UsuarioEgresado   usu1=(UsuarioEgresado)session.getAttribute("sesion");
+            if(usu1==null){%>
         <jsp:forward page="../JSPsession/sesioninvalida.jsp"/>
         
         
@@ -21,14 +21,14 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img src="../images/LOGO UNIA.png" alt=""><%=usu.getUsuario() %>-<%=usu.getTipoUsuario().getNom() %>
+                  <img src="../images/LOGO UNIA.png" alt=""><%=usu1.getEgresado().getNombres() %>-<%=usu1.getEgresado().getApellidos() %>
                   <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
                   
                   <li><a href=""><i class="badge btn-default"></i>
                           
-                          <form action="../UsuarioController?accion=cerrarsesion" name="f" method="post">
+                          <form action="../UsuarioEgresadoController?accion=cerrarsesion" name="f" method="post">
                                         <input  class="button" type="submit" value="cerrar sesion" />
                                         
                                     </form>

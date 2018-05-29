@@ -56,8 +56,8 @@
                         <div class="" style="border: 0;">
                             <a href="" class=""> <img src="../images/LOGO UNIA.png" alt="" height="50px" width="40px"/> <span></span></a>
                         </div>
-                        <form action="../UsuarioController?accion=validar" name="f" method="post">
-                            <h1>Mantenimiento</h1>
+                        <form action="../UsuarioEgresadoController?accion=validar" name="f" method="post">
+                            <h1>Egresados 2018</h1>
                             <div>
                                 <input type="text" class="form-control" placeholder="Usuario" required="" name="usuario" />
                             </div>

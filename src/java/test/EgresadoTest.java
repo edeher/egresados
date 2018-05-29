@@ -26,13 +26,14 @@ public class EgresadoTest {
      */
     public static void main(String[] args) throws DAOException{
         // TODO code application logic here
-        crear();
+//        crear();
 //        modificar();
 //        leerxid();
 //        leertodo();
 //        eliminar();
 //        destruir();
 //egresados_sin_encuestar();
+leerxdni();
     }
     public static void crear() throws DAOException
 	{
@@ -121,7 +122,18 @@ public class EgresadoTest {
 	 System.out.println(" "+egre.toString());
 		
 		}
-     
+      public static void leerxdni()throws DAOException
+	{
+		  EgresadoDAOFactory fabricate= new   EgresadoDAOFactory();
+                  EgresadoDAO daote= fabricate.metodoDAO();
+                
+		  Egresado objE= new   Egresado();
+		 objE.setDni("42373676");
+              
+                  Egresado egre=daote.leerxDni(objE);
+	 System.out.println(" "+egre.toString());
+		
+		}
        public static void leertodo()throws DAOException
 	{
 		  EgresadoDAOFactory fabricate= new   EgresadoDAOFactory();
