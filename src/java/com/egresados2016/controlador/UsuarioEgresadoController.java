@@ -164,7 +164,7 @@ public class UsuarioEgresadoController extends HttpServlet {
         }
         else{
            System.out.println("no ingreso ningun usuario");
-             response.sendRedirect("JSPsession/error.jsp");
+             response.sendRedirect("JSPsession/errorEgresado.jsp");
         }
       
       

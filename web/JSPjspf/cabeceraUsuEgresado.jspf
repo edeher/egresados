@@ -6,7 +6,7 @@
          
           UsuarioEgresado   usu1=(UsuarioEgresado)session.getAttribute("sesion");
             if(usu1==null){%>
-        <jsp:forward page="../JSPsession/sesioninvalida.jsp"/>
+        <jsp:forward page="../JSPsession/sesioninvalidaEgresado.jsp"/>
         
         
     <%}%>

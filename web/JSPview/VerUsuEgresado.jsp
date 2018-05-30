@@ -142,7 +142,7 @@
                         <br />
 
                         <!-- sidebar menu -->
-                        <%@ include file="../JSPjspf/menuAdministrador.jspf"%>
+                        <%@ include file="../JSPjspf/menuUsuaEgresado.jspf"%>
 
                         <!-- /menu footer buttons -->
             <!---            <%@ include file="../JSPjspf/herramientas.jspf"%>--->
