@@ -150,49 +150,9 @@ http://www.templatemo.com/free-website-templates/
   </div>
 </div>
 <!-- divider section -->
-<div class="container">
-  <div class="row">
-    <div class="col-md-1 col-sm-1"></div>
-    <div class="col-md-10 col-sm-10">
-      <hr>
-    </div>
-    <div class="col-md-1 col-sm-1"></div>
-  </div>
-</div>
+
 <!-- portfolio section -->
-<div id="portfolio">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-sm-12">
-        <div class="title">
-          <h2>Fotos</h2>
-        </div>
-        <!-- ISO section -->
-        <div class="iso-section">
-          <ul class="filter-wrapper clearfix">
-            <li><a href="#" data-filter="*" class="selected opc-main-bg">All</a></li>
-            <li><a href="#" class="opc-main-bg" data-filter=".html">Html</a></li>
-            <li><a href="#" class="opc-main-bg" data-filter=".photoshop">Photoshop</a></li>
-            <li><a href="#" class="opc-main-bg" data-filter=".wordpress">Wordpress</a></li>
-            <li><a href="#" class="opc-main-bg" data-filter=".mobile">Mobile</a></li>
-          </ul>
-          <div class="iso-box-section">
-            <div class="iso-box-wrapper col4-iso-box">
-              <div class="iso-box html photoshop wordpress mobile col-md-4 col-sm-4 col-xs-12"><a href="superfresh/images/portfolio-img1.jpg" data-lightbox-gallery="portfolio-gallery"><img src="superfresh/images/portfolio-img1.jpg" alt="portfolio img"></a></div>
-              <div class="iso-box html wordpress mobile col-md-4 col-sm-4 col-xs-12"><a href="superfresh/images/portfolio-img2.jpg" data-lightbox-gallery="portfolio-gallery"><img src="superfresh/images/portfolio-img2.jpg" alt="portfolio img"></a></div>
-              <div class="iso-box wordpress col-md-4 col-sm-4 col-xs-12"><a href="superfresh/images/portfolio-img3.jpg" data-lightbox-gallery="portfolio-gallery"><img src="superfresh/images/portfolio-img3.jpg" alt="portfolio img"></a></div>
-              <div class="iso-box html mobile col-md-6 col-sm-6 col-xs-12"><a href="superfresh/images/portfolio-img4.jpg" data-lightbox-gallery="portfolio-gallery"><img src="superfresh/images/portfolio-img4.jpg" alt="portfolio img"></a></div>
-              <div class="iso-box wordpress col-md-6 col-sm-6 col-xs-12"><a href="superfresh/images/portfolio-img5.jpg" data-lightbox-gallery="portfolio-gallery"><img src="superfresh/images/portfolio-img5.jpg" alt="portfolio img"></a></div>
-              <div class="iso-box html photoshop col-md-4 col-sm-4 col-xs-12"><a href="superfresh/images/portfolio-img6.jpg" data-lightbox-gallery="portfolio-gallery"><img src="superfresh/images/portfolio-img6.jpg" alt="portfolio img"></a></div>
-              <div class="iso-box photoshop col-md-4 col-sm-4 col-xs-12"><a href="superfresh/images/portfolio-img7.jpg" data-lightbox-gallery="portfolio-gallery"><img src="superfresh/images/portfolio-img7.jpg" alt="portfolio img"></a></div>
-              <div class="iso-box wordpress col-md-4 col-sm-4 col-xs-12"><a href="superfresh/images/portfolio-img8.jpg" data-lightbox-gallery="portfolio-gallery"><img src="superfresh/images/portfolio-img8.jpg" alt="portfolio img"></a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 <!-- divider section -->
 <div class="container">
   <div class="row">

@@ -96,7 +96,7 @@ CREATE TABLE `egresado` (
   `estadoCivil` char(2) DEFAULT NULL,
   `estado` char(1) DEFAULT NULL,
   PRIMARY KEY (`idEgresado`)
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,7 +105,7 @@ CREATE TABLE `egresado` (
 
 LOCK TABLES `egresado` WRITE;
 /*!40000 ALTER TABLE `egresado` DISABLE KEYS */;
-INSERT INTO `egresado` VALUES (1,1820,1820,4,'LEYWY JESIFER','MACEDO PEREZ','1990-04-11',27,'45396696','F','Av : los nogales','969441021','#969441021','leywy_30@hotmail.com','2007','2013',0,'SO','A'),(2,1821,1821,3,'ALVARO ANCESIO ','FLORES GONZALES ','1986-11-28',30,'42373676','M','fonavi. mz ','958510772','061-571914','alvarodufon84@hotmail.com','2007','2014',1,'CO','A'),(3,1820,1820,4,'PAULETH CORALI','AMARINGO MELEDEZ','1989-08-23',27,'47588741','F','Jr . 13 de mayo #191','978931612','#978931612','pauleth23@hotmail.com','2008','2015',0,'SO','A'),(4,1820,1820,4,'JIMMY SEGUNDO','AMARINGO MELENDEZ ','1988-06-09',28,'45649698','M','Jr . 13 de mayo #191','943142702','#943142702','jimmy_250@hotmail.com','2007','2014',0,'SO','A'),(5,1820,1820,2,'LEIDY WENY','JAUREGUI KATAYAMA','1990-04-10',26,'47767541','F','jr: puerto maldonado','942491677','#942491677','leidy_14@hotmail.com','2009','2014',0,'SO','A'),(6,1821,1821,1,'FELICIA CRISTINA','VASQUEZ  REATEGUI ','1991-01-12',25,'71340341','F','jr.lima ','944816542','','cristina_vasrey@hotmail.com','2008','2014',0,'SO','A'),(7,1820,1820,1,'ALICIA','DURAND CALDERON','1989-08-18',27,'00000000','F','JR LUIS GARCIA # 750','','','alicia_89@hotmail.com','2007','2012',1,'CO','A'),(8,1820,1820,1,'GLORIA','QUINTO  DE LA CRUZ ','1988-11-05',28,'48651169','F','JR. PROLONGACION SAN MARTIN #117','940519757','596865','gloria823@gmail.com','2006','2012',0,'SO','A'),(9,1820,1820,4,'TATIANA ANALI','HONORIO CREO','1991-10-10',25,'13954187','F','av, gamoa amasifues','968474358','','anali_hc_16@hotmail.com','2010','2015',0,'SO','A'),(10,1821,1821,4,'DANIELA DE JESUS ','VASQUES REATEGUI','1993-12-18',23,'71339704','F','JR.LIMA ','971447876','','REATEGUI_13@GMAIL.COM','2010','2015',0,'SO','A'),(11,1821,1821,3,'CARLOS GUILLERMO','AYLLON CHAVEZ','1989-06-30',27,'44485875','M','jr. 9 de junio MZ.E LT,05','956210484','#956210484','carlos_ayllon22@hotmail.com','2007','2011',2,'SO','A'),(12,1826,1826,1,'LIZ MERY','GARCIA OCHAVANO','1991-07-10',26,'70773335','F','jr. los ceticos #350 san fernando ','966111089','','garcia_liz@gmail.com','2008','2013',1,'SO','A'),(13,1821,1821,3,'FRANCISCO RUBENS ','SALDA√É¬ëA TAPULLIMA','1988-08-13',28,'46948159','M','jr.purus MZ..75 LT 6','943260244','','rubens666_7@hotmail.com','2007','2013',1,'CA','A'),(14,1821,1821,1,'ROSARIO DEL PILAR','RAMIREZ AMASIFUEN ','1989-03-28',27,'45745646','F','jr. purus MZ 75 LT .6','942483020','','sexi_1228_jm@hotmail.com','2006','2011',1,'CA','A'),(15,1826,1826,4,'EDWIN JUNIOR','ANDION R√É¬É?OS ','1988-11-02',28,'45499687','M','JR.EMILIO TIPTO N √É¬Ç√Ç¬∞ 156','968872395','','andion_02@hotmail.com','2006','2014',1,'SO','A'),(16,1821,1823,1,'CELIA MAYRA','SILVA TORRES ','1989-05-13',27,'44795025','F','AV.YARINACOCHA #552','947970770','#947970770','celia_silva_02@gmail.com','2006','2014',1,'SO','A'),(17,1820,1821,4,'ERICK DAVID','HUAPAYA DAVILA ','1990-09-24',26,'46849457','M','KM.14200 CFB','949695946','#949695946','davila_14@gmail.com','2007','2013',0,'SO','A'),(18,1826,1826,2,'SHAWM','MU√É¬ëOS TANANTA','1992-01-01',25,'46622374','F','jr.margarita # 497','954687594','#954687594','shawn_loveyou@hotmail.com','2009','2014',0,'SO','A'),(19,1821,1821,4,'WILLS  GEERAL','BARTRA RIVERA ','1989-08-25',27,'45881345','M','AV.copaiba ','948951502','#948951502','bartra_12@gmail.com','2007','2013',0,'SO','A'),(20,1820,1820,1,'dior doylith','panduro macedo','1989-06-15',27,'45261476','F','jr Arequipa #235','945086765','#945086765','dioylith_15@hotmail.com','2006','2014',1,'CO','A'),(21,1820,1820,1,'LISETH VIVIANA','R√É¬É√Ç¬É√É¬Ç√Ç¬≠OS HERRERA','1988-01-13',28,'45989153','F','jr. Pedro parva','939263639','59-48-21','livirihe@gmail.com','2005','2010',1,'CO','A'),(22,1521,1821,3,'ANGEL','VILLAFUERTE PAREDES ','1989-10-16',27,'43435500','M','JR.SAM  ALEJANDRO ','999057024','#999057024','angelvillafuerte@gmail.com','2006','2014',0,'SO','A'),(23,27,27,2,'ELCODAN','SABIA ROCA','1989-01-24',27,'46737774','M','san Pablo de tushmo','99754980','99754980','','2008','2014',1,'CO','A'),(24,1826,1826,2,'GREISY GESELINE','TORRES FUCHS','1991-01-22',25,'44095966','F','jr. pucallpa mz 9 lt7','932942457','','grey.gese312@gmail.com','2009','2014',2,'CO','A'),(25,1821,1821,4,'JANE SHIRLEY','MORI CAIRUNA','1990-05-18',26,'48115612','F','AV.CIRCUNVALACION/16 CE OCTUBRE MZ:226','9728223','#972822319','ainbiomoxoco24.2c22@gmail.com','2008','2016',0,'SO','A'),(26,1820,1820,2,'NURI','PINEDO AHUANARI','1991-04-10',25,'48668564','F','jr la selva mz 120 lt9','996129986','','nuri_escorpio@hotmail.com','2009','2014',0,'SO','A'),(27,1821,1821,3,'GREASE ISABEL','BARRETO NUNTA ','1992-07-16',24,'46822363','F','PROLONGACION. SAM MARTIN MZ 190 LT 02 ','961519487','#961519487','greace_19@hotmail.com','2010','2015',0,'SO','A'),(28,880,880,1,'ELIZABETH LUCIA','SALAZAR VENTURO','1991-04-11',25,'47419570','F','AAHH.14 de febrero','959462492','','','2010','2014',0,'SO','A'),(29,1833,1821,3,'SUSAN CRIST','RUIZ TAPULLIMA ','1991-08-18',25,'73382901','F','francisco del aguila MZ:195A LT.15','957649142','#957649142','susanruizt@gmail.com','2010','2015',0,'SO','A'),(30,1830,1830,2,'YLDO YSRAEL','DE LA CRUZ ARIOLA','1989-02-06',27,'80616896','M','','954540328','','ariolacruz@gmail.com','2005','2011',2,'CO','A'),(31,1821,1821,4,'DEYVIS VIDAL','BARRETO NUNTA ','1989-07-16',27,'45914237','M','PSJE.SAN MARTIN MZ:190 LT 02','942491677','#942491677','bagner_58@hotmail.com','2010','2015',0,'SO','A'),(32,1758,1821,4,'JANISSE','ANGULO TORRES','1988-12-24',27,'42885547','F','JR.CAPAC MZ:C LT: 9','976621827','#976621827','lucianajanise@hotmail.com','2009','2015',0,'SO','A'),(33,1820,1820,4,'KEVIN PAUL LUISINHO','VIZCARRA CRESPO','1990-06-07',26,'46119687','M','jr. alfredo eglitnton mz a lt15','949447457','925373053','','2009','2015',0,'SO','A'),(34,1821,1821,4,'JHONY MANUEL','LOPEZ  RAMIREZ','1988-08-19',28,'45301513','M','CARRETERA FEDERICO BASADRE KM 5','942902734','#942902734','jmlr_013@hotmail.com','2006','2012',0,'SO','A'),(35,1820,1820,4,'JERRY MIKE','RODRIGUES GONZALEZ','1993-05-11',23,'72485173','M','jr. Francisco bolognesi','970912786','','','2010','2016',0,'SO','A'),(36,1821,1821,4,'ALDAIR PAUL','DAHUA BEMBINO','1995-04-09',21,'47373824','M','carretera antigua de yarinacocha mz c lt 22','971007902','961924646','bembino_28@hotmail.com','2010','2015',0,'SO','A'),(37,927,1826,4,'ELIAS','APONTE ROJAS','1990-08-17',26,'43993502','M','KM.7200 MALDONADO BEGASO  MZ  M LT18','957576201','#957576201','elias_ap17@gmail.com','2009','2015',0,'SO','A'),(38,1820,1820,3,'RAUL ANTONIO','CASTRO PINZAS','1990-03-06',26,'43621828','M','jr leticia #587','9619700087','','rcastro_pinzas@hotmail.com','2008','2016',0,'SO','A'),(39,1449,1821,4,'MILENA ','JAYMES VASQUEZ','1993-03-20',23,'47663573','F','JR.BOLIVAR 123','969112252','#969112252','milenajv_0320@hotmail.com','2010','2015',0,'SO','A'),(40,1520,1520,4,'YAKELIN CHARO','MERCEDES CAMANGO','1990-01-05',26,'47699120','F','jr. alberto fujimori constituci√É¬É√Ç¬É√É¬Ç√Ç¬≥n','982020085','','jmc_escorpio@hotmail.com','2008','2014',0,'SO','A'),(41,1820,1821,4,'JOSE AUGUSTO','AYLLON  CHAVEZ','1989-06-30',27,'45278267','M','JR. 09 DE JULIO MZ \"c\" LT03','954565883','#954565883','jaugusto_ayllon30@hotmaiil.com','2006','2012',1,'CO','A'),(42,1820,1820,4,'JIMMY FRANK','GONZALES TIBURCIO','1988-03-09',28,'42562609','M','jr raymondi # 717','961508574','','','2007','2015',0,'SO','A'),(43,1826,1826,4,'KATHYA  LIZ','BARBOSA RIOS','1992-02-01',24,'71435251','F','JR.JESUS MARIA MZ.M LT 08','999343771','#999343771','kaliz92@hotmail.com','2010','2015',0,'SO','A'),(44,1820,1820,4,'JHONY AUGUSTO','REATEGUI D√É¬ÅVILA','1991-02-06',25,'46912125','M','jr. tapiche # 150','938904591','','solojhony_31@hotmail.com','2009','2016',0,'SO','A'),(45,1826,1826,4,'MAYRA','RAMIREZ LOZANO','1998-12-30',17,'47724063','F','JR.LOS NARANJOS S/N','956070997','#956070997','may-prl@hotmail.com','2010','2015',0,'SO','A'),(46,1821,1820,4,'VICTOR REIGER','PEREZ ORTIZ','1987-04-24',29,'44244672','M','AA.HH. 4 SUYOS MZ \"A\" LT 05','998712927','#998712927','fox_tauro@hotmail.com','2008','2015',1,'SO','A'),(47,1821,1821,4,'ALBERTO NICANOR','HERRERA RAMIREZ','1984-09-14',32,'42638852','M','JR. AGUYTIA N√É¬Ç√Ç¬∞1002','953547482','#953547482','aherrera.unia@gmail.com','2006','2013',1,'CA','A'),(48,1821,1821,4,'YECENIA DAIDI','PADILLA CHAVEZ ','1989-02-13',27,'47486988','F','JR . LOS CEDROS MZ . 10A LT 4  ','998601839','#998601839','yeceniapadilla3@gmail.com','2008','2015',1,'SO','A'),(49,1820,1820,4,'PAULO CESAR ','PANDURO MACEDO ','1991-06-16',25,'71347666','M','JR. AREQUIPA N √É¬Ç√Ç¬∞235','952026236','#952026236','pau_16@gmail.com','2008','2016',0,'SO','A'),(50,1821,1821,4,'ANA ROCIO','BARBARAN SALDA√É¬ëA ','1992-04-28',24,'47530419','M','JR . LOS LAURELES MZ.03 LT 10','957914784','#957914784','ana.rocio2892@gmail.com','2009','2014',0,'SO','A'),(51,1820,1820,4,'ANGEL EDUARDO','VARGAS PEREZ','1989-08-11',27,'45864344','M','jr. urubamba #201','969641595','061-48-55-78','angelus_vp88@hotmail.com','2008','2016',0,'SO','A'),(52,1821,1821,4,'JUNIOR ABEL','GAL√É¬É√Ç¬É√É¬Ç√Ç¬°N MOZOMBITE','1990-05-05',26,'70749101','M','jr.3 de octubre # 680','945687594','061-59-95-04','junior_abel2@hotmail.com','2009','2015',0,'SO','A'),(53,1821,1821,4,'LUIS ALEJANDRO','RODRIGUES GARCIA ','1988-05-15',28,'46178955','M','JR.MARIANO  MELGAR #209','961073305','#961073305','garcialuis_46@gmail.com','2007','2013',0,'SO','A'),(54,1821,1821,4,'GLADYS LIZENKA','VILLACORTA LINARES','1994-03-06',22,'72952354','F','jr.purus mz 84 lt 10 A','961685299','061-59-74-02','liznk_8@hotmail.com','2011','2015',0,'SO','A'),(55,1773,1773,4,'FRANS RICARDO','SINARAHUA TAPULLIMA','1992-03-10',24,'46678537','M','AA.HH. Ricardo palma mz jlt10','939323071','061-59-22-55','','2009','2015',0,'SO','A'),(56,1820,1826,4,'DIEGO  MARTIN ','ROJAS  ACOSTA ','1988-12-05',28,'70509582','M','AV.PRIMAVERA MZ-37-GLT.05 ','962075894','#962075894','diego_r14@gmail.com','2009','2015',0,'SO','A'),(57,1831,1831,3,'ARMANDO','JARAMILLO ZUMAETA','1970-05-10',47,'00153372','M','nueva era mz j lt 13','971119195','','mando_emprende@hotmail.com','2007','2016',0,'SO','A'),(60,363,382,1,'OFELIA','CAMPOS','1990-12-27',27,'60369753','F','dfdfdf','43345435','345435','ssf@dfdfdf.com','2006','2016',4,'SO','A'),(61,128,401,1,'EDEHER','PONCE','1982-04-03',36,'43056714','M','carrtera antigua yarina 170','948052910','948052910','edeher_deka@hotmail.com','2013','2018',3,'CA','A'),(62,277,477,3,'PANFILO','BONIFATIPO','1991-04-04',27,'11223344','M','carrtera antigua yarina 170','948052910','948052910','edeher_deka@hotmail.com','2013','2018',1,'CO','A'),(63,388,277,1,'NARUTO','UZUMAKI','1992-04-03',26,'22334455','M','carrtera antigua yarina 170','948052910','948052910','edeher_deka@hotmail.com','2013','2018',3,'DI','A'),(64,388,388,1,'SASKE','UCHIIA','1991-04-03',27,'55667788','M','carrtera antigua yarina 170','948052910','948052910','edeher_deka@hotmail.com','2013','2018',7,'DI','A'),(65,117,388,1,'TELESFORO','TELE','1992-04-20',25,'99998888','M','carrtera antigua yarina 170','948052910','948052910','edeher_deka@hotmail.com','2016','2018',3,'CO','A'),(66,117,277,3,'AANACLETO','MANANITO','1991-04-17',26,'11885522','M','carrtera antigua yarina 170','948052910','948052910','edeher_deka@hotmail.com','2012','2017',7,'VI','A');
+INSERT INTO `egresado` VALUES (1,1820,1820,4,'LEYWY JESIFER','MACEDO PEREZ','1990-04-11',28,'45396696','F','Av : los nogales','969441021','#969441021','leywy_30@hotmail.com','2007','2013',0,'SO','A'),(2,1821,1821,3,'ALVARO ANCESIO ','FLORES GONZALES ','1986-11-28',31,'42373676','M','fonavi. mz ','958510772','061-571914','alvarodufon84@hotmail.com','2007','2014',1,'CO','A'),(3,1820,1820,4,'PAULETH CORALI','AMARINGO MELEDEZ','1989-08-23',27,'47588741','F','Jr . 13 de mayo #191','978931612','#978931612','pauleth23@hotmail.com','2008','2015',0,'SO','A'),(4,1820,1820,4,'JIMMY SEGUNDO','AMARINGO MELENDEZ ','1988-06-09',28,'45649698','M','Jr . 13 de mayo #191','943142702','#943142702','jimmy_250@hotmail.com','2007','2014',0,'SO','A'),(5,1820,1820,2,'LEIDY WENY','JAUREGUI KATAYAMA','1990-04-10',26,'47767541','F','jr: puerto maldonado','942491677','#942491677','leidy_14@hotmail.com','2009','2014',0,'SO','A'),(6,1821,1821,1,'FELICIA CRISTINA','VASQUEZ  REATEGUI ','1991-01-12',25,'71340341','F','jr.lima ','944816542','','cristina_vasrey@hotmail.com','2008','2014',0,'SO','A'),(7,1820,1820,1,'ALICIA','DURAND CALDERON','1989-08-18',27,'00000000','F','JR LUIS GARCIA # 750','','','alicia_89@hotmail.com','2007','2012',1,'CO','A'),(8,1820,1820,1,'GLORIA','QUINTO  DE LA CRUZ ','1988-11-05',28,'48651169','F','JR. PROLONGACION SAN MARTIN #117','940519757','596865','gloria823@gmail.com','2006','2012',0,'SO','A'),(9,1820,1820,4,'TATIANA ANALI','HONORIO CREO','1991-10-10',25,'13954187','F','av, gamoa amasifues','968474358','','anali_hc_16@hotmail.com','2010','2015',0,'SO','A'),(10,1821,1821,4,'DANIELA DE JESUS ','VASQUES REATEGUI','1993-12-18',23,'71339704','F','JR.LIMA ','971447876','','REATEGUI_13@GMAIL.COM','2010','2015',0,'SO','A'),(11,1821,1821,3,'CARLOS GUILLERMO','AYLLON CHAVEZ','1989-06-30',27,'44485875','M','jr. 9 de junio MZ.E LT,05','956210484','#956210484','carlos_ayllon22@hotmail.com','2007','2011',2,'SO','A'),(12,1826,1826,1,'LIZ MERY','GARCIA OCHAVANO','1991-07-10',26,'70773335','F','jr. los ceticos #350 san fernando ','966111089','','garcia_liz@gmail.com','2008','2013',1,'SO','A'),(13,1821,1821,3,'FRANCISCO RUBENS ','SALDA√É¬ëA TAPULLIMA','1988-08-13',28,'46948159','M','jr.purus MZ..75 LT 6','943260244','','rubens666_7@hotmail.com','2007','2013',1,'CA','A'),(14,1821,1821,1,'ROSARIO DEL PILAR','RAMIREZ AMASIFUEN ','1989-03-28',27,'45745646','F','jr. purus MZ 75 LT .6','942483020','','sexi_1228_jm@hotmail.com','2006','2011',1,'CA','A'),(15,1826,1826,4,'EDWIN JUNIOR','ANDION R√É¬É?OS ','1988-11-02',28,'45499687','M','JR.EMILIO TIPTO N √É¬Ç√Ç¬∞ 156','968872395','','andion_02@hotmail.com','2006','2014',1,'SO','A'),(16,1821,1823,1,'CELIA MAYRA','SILVA TORRES ','1989-05-13',27,'44795025','F','AV.YARINACOCHA #552','947970770','#947970770','celia_silva_02@gmail.com','2006','2014',1,'SO','A'),(17,1820,1821,4,'ERICK DAVID','HUAPAYA DAVILA ','1990-09-24',26,'46849457','M','KM.14200 CFB','949695946','#949695946','davila_14@gmail.com','2007','2013',0,'SO','A'),(18,1826,1826,2,'SHAWM','MU√É¬ëOS TANANTA','1992-01-01',25,'46622374','F','jr.margarita # 497','954687594','#954687594','shawn_loveyou@hotmail.com','2009','2014',0,'SO','A'),(19,1821,1821,4,'WILLS  GEERAL','BARTRA RIVERA ','1989-08-25',27,'45881345','M','AV.copaiba ','948951502','#948951502','bartra_12@gmail.com','2007','2013',0,'SO','A'),(20,1820,1820,1,'dior doylith','panduro macedo','1989-06-15',27,'45261476','F','jr Arequipa #235','945086765','#945086765','dioylith_15@hotmail.com','2006','2014',1,'CO','A'),(21,1820,1820,1,'LISETH VIVIANA','R√É¬É√Ç¬É√É¬Ç√Ç¬≠OS HERRERA','1988-01-13',28,'45989153','F','jr. Pedro parva','939263639','59-48-21','livirihe@gmail.com','2005','2010',1,'CO','A'),(22,1521,1821,3,'ANGEL','VILLAFUERTE PAREDES ','1989-10-16',27,'43435500','M','JR.SAM  ALEJANDRO ','999057024','#999057024','angelvillafuerte@gmail.com','2006','2014',0,'SO','A'),(23,27,27,2,'ELCODAN','SABIA ROCA','1989-01-24',27,'46737774','M','san Pablo de tushmo','99754980','99754980','','2008','2014',1,'CO','A'),(24,1826,1826,2,'GREISY GESELINE','TORRES FUCHS','1991-01-22',25,'44095966','F','jr. pucallpa mz 9 lt7','932942457','','grey.gese312@gmail.com','2009','2014',2,'CO','A'),(25,1821,1821,4,'JANE SHIRLEY','MORI CAIRUNA','1990-05-18',26,'48115612','F','AV.CIRCUNVALACION/16 CE OCTUBRE MZ:226','9728223','#972822319','ainbiomoxoco24.2c22@gmail.com','2008','2016',0,'SO','A'),(26,1820,1820,2,'NURI','PINEDO AHUANARI','1991-04-10',25,'48668564','F','jr la selva mz 120 lt9','996129986','','nuri_escorpio@hotmail.com','2009','2014',0,'SO','A'),(27,1821,1821,3,'GREASE ISABEL','BARRETO NUNTA ','1992-07-16',24,'46822363','F','PROLONGACION. SAM MARTIN MZ 190 LT 02 ','961519487','#961519487','greace_19@hotmail.com','2010','2015',0,'SO','A'),(28,880,880,1,'ELIZABETH LUCIA','SALAZAR VENTURO','1991-04-11',25,'47419570','F','AAHH.14 de febrero','959462492','','','2010','2014',0,'SO','A'),(29,1833,1821,3,'SUSAN CRIST','RUIZ TAPULLIMA ','1991-08-18',25,'73382901','F','francisco del aguila MZ:195A LT.15','957649142','#957649142','susanruizt@gmail.com','2010','2015',0,'SO','A'),(30,1830,1830,2,'YLDO YSRAEL','DE LA CRUZ ARIOLA','1989-02-06',27,'80616896','M','','954540328','','ariolacruz@gmail.com','2005','2011',2,'CO','A'),(31,1821,1821,4,'DEYVIS VIDAL','BARRETO NUNTA ','1989-07-16',27,'45914237','M','PSJE.SAN MARTIN MZ:190 LT 02','942491677','#942491677','bagner_58@hotmail.com','2010','2015',0,'SO','A'),(32,1758,1821,4,'JANISSE','ANGULO TORRES','1988-12-24',27,'42885547','F','JR.CAPAC MZ:C LT: 9','976621827','#976621827','lucianajanise@hotmail.com','2009','2015',0,'SO','A'),(33,1820,1820,4,'KEVIN PAUL LUISINHO','VIZCARRA CRESPO','1990-06-07',26,'46119687','M','jr. alfredo eglitnton mz a lt15','949447457','925373053','','2009','2015',0,'SO','A'),(34,1821,1821,4,'JHONY MANUEL','LOPEZ  RAMIREZ','1988-08-19',28,'45301513','M','CARRETERA FEDERICO BASADRE KM 5','942902734','#942902734','jmlr_013@hotmail.com','2006','2012',0,'SO','A'),(35,1820,1820,4,'JERRY MIKE','RODRIGUES GONZALEZ','1993-05-11',23,'72485173','M','jr. Francisco bolognesi','970912786','','','2010','2016',0,'SO','A'),(36,1821,1821,4,'ALDAIR PAUL','DAHUA BEMBINO','1995-04-09',21,'47373824','M','carretera antigua de yarinacocha mz c lt 22','971007902','961924646','bembino_28@hotmail.com','2010','2015',0,'SO','A'),(37,927,1826,4,'ELIAS','APONTE ROJAS','1990-08-17',26,'43993502','M','KM.7200 MALDONADO BEGASO  MZ  M LT18','957576201','#957576201','elias_ap17@gmail.com','2009','2015',0,'SO','A'),(38,1820,1820,3,'RAUL ANTONIO','CASTRO PINZAS','1990-03-06',26,'43621828','M','jr leticia #587','9619700087','','rcastro_pinzas@hotmail.com','2008','2016',0,'SO','A'),(39,1449,1821,4,'MILENA ','JAYMES VASQUEZ','1993-03-20',23,'47663573','F','JR.BOLIVAR 123','969112252','#969112252','milenajv_0320@hotmail.com','2010','2015',0,'SO','A'),(40,1520,1520,4,'YAKELIN CHARO','MERCEDES CAMANGO','1990-01-05',26,'47699120','F','jr. alberto fujimori constituci√É¬É√Ç¬É√É¬Ç√Ç¬≥n','982020085','','jmc_escorpio@hotmail.com','2008','2014',0,'SO','A'),(41,1820,1821,4,'JOSE AUGUSTO','AYLLON  CHAVEZ','1989-06-30',27,'45278267','M','JR. 09 DE JULIO MZ \"c\" LT03','954565883','#954565883','jaugusto_ayllon30@hotmaiil.com','2006','2012',1,'CO','A'),(42,1820,1820,4,'JIMMY FRANK','GONZALES TIBURCIO','1988-03-09',28,'42562609','M','jr raymondi # 717','961508574','','','2007','2015',0,'SO','A'),(43,1826,1826,4,'KATHYA  LIZ','BARBOSA RIOS','1992-02-01',24,'71435251','F','JR.JESUS MARIA MZ.M LT 08','999343771','#999343771','kaliz92@hotmail.com','2010','2015',0,'SO','A'),(44,1820,1820,4,'JHONY AUGUSTO','REATEGUI D√É¬ÅVILA','1991-02-06',25,'46912125','M','jr. tapiche # 150','938904591','','solojhony_31@hotmail.com','2009','2016',0,'SO','A'),(45,1826,1826,4,'MAYRA','RAMIREZ LOZANO','1998-12-30',17,'47724063','F','JR.LOS NARANJOS S/N','956070997','#956070997','may-prl@hotmail.com','2010','2015',0,'SO','A'),(46,1821,1820,4,'VICTOR REIGER','PEREZ ORTIZ','1987-04-24',29,'44244672','M','AA.HH. 4 SUYOS MZ \"A\" LT 05','998712927','#998712927','fox_tauro@hotmail.com','2008','2015',1,'SO','A'),(47,1821,1821,4,'ALBERTO NICANOR','HERRERA RAMIREZ','1984-09-14',32,'42638852','M','JR. AGUYTIA N√É¬Ç√Ç¬∞1002','953547482','#953547482','aherrera.unia@gmail.com','2006','2013',1,'CA','A'),(48,1821,1821,4,'YECENIA DAIDI','PADILLA CHAVEZ ','1989-02-13',27,'47486988','F','JR . LOS CEDROS MZ . 10A LT 4  ','998601839','#998601839','yeceniapadilla3@gmail.com','2008','2015',1,'SO','A'),(49,1820,1820,4,'PAULO CESAR ','PANDURO MACEDO ','1991-06-16',25,'71347666','M','JR. AREQUIPA N √É¬Ç√Ç¬∞235','952026236','#952026236','pau_16@gmail.com','2008','2016',0,'SO','A'),(50,1821,1821,4,'ANA ROCIO','BARBARAN SALDA√É¬ëA ','1992-04-28',26,'47530419','M','JR . LOS LAURELES MZ.03 LT 10','957914784','#957914784','ana.rocio2892@gmail.com','2009','2014',0,'SO','A'),(51,1820,1820,4,'ANGEL EDUARDO','VARGAS PEREZ','1989-08-11',27,'45864344','M','jr. urubamba #201','969641595','061-48-55-78','angelus_vp88@hotmail.com','2008','2016',0,'SO','A'),(52,1821,1821,4,'JUNIOR ABEL','GAL√É¬É√Ç¬É√É¬Ç√Ç¬°N MOZOMBITE','1990-05-05',26,'70749101','M','jr.3 de octubre # 680','945687594','061-59-95-04','junior_abel2@hotmail.com','2009','2015',0,'SO','A'),(53,1821,1821,4,'LUIS ALEJANDRO','RODRIGUES GARCIA ','1988-05-15',28,'46178955','M','JR.MARIANO  MELGAR #209','961073305','#961073305','garcialuis_46@gmail.com','2007','2013',0,'SO','A'),(54,1821,1821,4,'GLADYS LIZENKA','VILLACORTA LINARES','1994-03-06',22,'72952354','F','jr.purus mz 84 lt 10 A','961685299','061-59-74-02','liznk_8@hotmail.com','2011','2015',0,'SO','A'),(55,1773,1773,4,'FRANS RICARDO','SINARAHUA TAPULLIMA','1992-03-10',24,'46678537','M','AA.HH. Ricardo palma mz jlt10','939323071','061-59-22-55','','2009','2015',0,'SO','A'),(56,1820,1826,4,'DIEGO  MARTIN ','ROJAS  ACOSTA ','1988-12-05',28,'70509582','M','AV.PRIMAVERA MZ-37-GLT.05 ','962075894','#962075894','diego_r14@gmail.com','2009','2015',0,'SO','A'),(57,1831,1831,3,'ARMANDO','JARAMILLO ZUMAETA','1970-05-10',47,'00153372','M','nueva era mz j lt 13','971119195','','mando_emprende@hotmail.com','2007','2016',0,'SO','A'),(60,363,382,1,'OFELIA','CAMPOS','1990-12-27',27,'60369753','F','dfdfdf','43345435','345435','ssf@dfdfdf.com','2006','2016',4,'SO','A'),(62,277,477,3,'PANFILO','BONIFATIPO','1991-04-04',27,'11223344','M','carrtera antigua yarina 170','948052910','948052910','edeher_deka@hotmail.com','2013','2018',1,'CO','A'),(63,388,277,1,'NARUTO','UZUMAKI','1992-04-03',26,'22334455','M','carrtera antigua yarina 170','948052910','948052910','edeher_deka@hotmail.com','2013','2018',3,'DI','A'),(64,388,388,1,'SASKE','UCHIIA','1991-04-03',27,'55667788','M','carrtera antigua yarina 170','948052910','948052910','edeher_deka@hotmail.com','2013','2018',7,'DI','A'),(65,117,388,1,'TELESFORO','TELE','1992-04-20',25,'99998888','M','carrtera antigua yarina 170','948052910','948052910','edeher_deka@hotmail.com','2016','2018',3,'CO','A'),(66,117,277,3,'AANACLETO','MANANITO','1991-04-17',26,'11885522','M','carrtera antigua yarina 170','948052910','948052910','edeher_deka@hotmail.com','2012','2017',7,'VI','A'),(67,1,2,1,'odiseo','itaca','1982-07-10',35,'11888888','M','alla','999999','999999','edercin@gmail.com','2004','2010',2,'CO','A'),(69,1,1,1,'edeher','ponce','2016-02-20',2,'44444499','M','ya llego','789456123','321456988','@@@@@@@@','2006','2008',3,'CO','A'),(70,1,2,1,'odiseo','itaca','1982-07-10',35,'11288888','M','alla','999999','999999','edercin@gmail.com','2004','2010',2,'CO','A'),(71,1,2,1,'odiseo','itaca','1982-07-10',35,'11288889','M','alla','999999','999999','edercin@gmail.com','2004','2010',2,'CO','A'),(72,1,1,1,'edeher','ponce','2016-02-20',2,'44444466','M','ya llego','789456123','321456988','@@@@@@@@','2006','2008',3,'CO','A'),(74,128,117,3,'EDEHER','PONCE','2018-05-02',0,'43056714','M','carrtera antigua yarina 170','948052910','948052910','edeher@gmail.com','2005','2011',2,'CO','A');
 /*!40000 ALTER TABLE `egresado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -450,7 +450,7 @@ CREATE TABLE `usuarioegresado` (
   `contrasena` blob,
   `estado` char(1) DEFAULT NULL,
   PRIMARY KEY (`idUsuarioEgresado`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -459,7 +459,7 @@ CREATE TABLE `usuarioegresado` (
 
 LOCK TABLES `usuarioegresado` WRITE;
 /*!40000 ALTER TABLE `usuarioegresado` DISABLE KEYS */;
-INSERT INTO `usuarioegresado` VALUES (2,1,'pepito2','B\ÿ\“$^\Í¸â©-\ÊºÛ','A'),(3,2,'pepito2','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(4,3,'pepito2','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(5,4,'pepito2','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(6,5,'mayong','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(7,6,'mayong','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(8,0,'pepito2','@nu+ï-Å7Å\⁄”ß§∫','A');
+INSERT INTO `usuarioegresado` VALUES (2,1,'pepito1','B\ÿ\“$^\Í¸â©-\ÊºÛ','A'),(3,2,'pepito2','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(4,3,'pepito3','B\ÿ\“$^\Í¸â©-\ÊºÛ','A'),(5,4,'pepito4','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(6,5,'mayong1','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(7,6,'mayong2','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(9,7,'pepito5','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(10,8,'pepito6','@nu+ï-Å7Å\⁄”ß§∫','A'),(11,9,'pepito7','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(12,10,'mayong8','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(13,11,'mayong3','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(14,67,'deka','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(15,68,'mayong4','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(17,70,'mayong5','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(18,71,'mayong6','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(19,72,'mayong7','¢!Ωç˝\»Zã/¶÷ù\œ','A'),(30,74,'eponce','¢!Ωç˝\»Zã/¶÷ù\œ','A');
 /*!40000 ALTER TABLE `usuarioegresado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1109,6 +1109,78 @@ where  escuela.idFacultad=facultad.idFacultad
  /*------------------------------------------------------------------------*/
 (select nombres, apellidos,fechaNac,edad,dni, sexo, direccion,telefono1,telefono2,correo,anioIngreso,anioEgreso,nroHijos,estadoCivil,estado 
 from egresado where idEgresado=VidEgresado and  egresado.estado='A'  ) as s4
+;
+ 
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_egresado_bcoxdni` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_egresado_bcoxdni`(
+		in Vdni char(8)
+)
+begin
+declare VfechaNac date;
+set VfechaNac=(select fechaNac from egresado where dni=Vdni);
+update egresado set
+
+edad=DATE_FORMAT(FROM_DAYS(TO_DAYS(NOW())-TO_DAYS(VfechaNac)), '%Y')+0
+where dni=Vdni;
+
+select * from (select idEgresado from egresado where dni=Vdni and  egresado.estado='A' ) as s0 ,
+
+(select distrito.idDistrito as idDistritoNac, 
+			provincia.idProvincia as idProvinciaNac,
+				departamento.idDepartamento as idDepartamentoNac,
+				departamento.descripcion as departamentoNac,
+				departamento.estado as estado1,
+			provincia.descripcion as provinciaNac,
+			provincia.estado as estado2,
+		distrito.descripcion as distritoNac,
+		distrito.estado as estado3
+        
+from distrito,provincia,departamento 
+
+where distrito.idDistrito=(select idDistritoNac from egresado where dni=Vdni)and 
+distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento) as s1,
+
+ (select distrito.idDistrito as idDistritoRec , 
+			provincia.idProvincia as idProvinciaRec,
+				departamento.idDepartamento as idDepartamentoRec,
+				departamento.descripcion as departamentoRec,
+				departamento.estado as estado4,
+			provincia.descripcion as ProvinciaRec,
+			provincia.estado as estado5,
+		distrito.descripcion as distritoRec,
+		distrito.estado as estado6
+        
+        from distrito,provincia,departamento 
+        
+	where distrito.idDistrito=(select idDistritoRec from egresado where dni=Vdni) and 
+distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento ) as s2 ,
+ /*------------------------------------------------------------------------*/
+(select escuela.idEscuela , facultad.idFacultad, facultad.descripcion as descripcion1,
+facultad.estado as estado0, escuela.descripcion,escuela.estado as estado00
+ from escuela, facultad ,egresado
+
+where  escuela.idFacultad=facultad.idFacultad
+ and egresado.idEscuela=escuela.idEscuela and egresado.dni=Vdni) as s3,
+ /*------------------------------------------------------------------------*/
+(select nombres, apellidos,fechaNac,edad,dni, sexo, direccion,telefono1,telefono2,correo,anioIngreso,anioEgreso,nroHijos,estadoCivil,estado 
+from egresado where dni=Vdni and  egresado.estado='A'  ) as s4
 ;
  
 end ;;
@@ -6821,6 +6893,91 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_usuarioEgresado_all` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuarioEgresado_all`()
+begin
+select idUsuarioEgresado,
+idEgresado, idDistritoNac,idProvinciaNac,idDepartamentoNac,departamentoNac,estado1,provinciaNac,estado2,distritoNac,estado3,
+					idDistritoRec,idProvinciaRec,idDepartamentoRec,departamentoRec,estado4,provinciaRec,estado5,distritoRec,estado6,
+                    
+                   idEscuela ,idFacultad,  descripcion1,
+					estado0, descripcion, estado00,
+                    
+                    nombres, apellidos,fechaNac,edad,dni, sexo, direccion,telefono1,telefono2,correo,anioIngreso,anioEgreso,nroHijos,estadoCivil,estado10,
+                    usuario,estado
+                    from 
+(select idUsuarioEgresado, idEgresado as idEgresado1 from usuarioegresado where  estado='A') 
+as s0 inner join
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select idEgresado ,idEscuela as idEscuel,idDistritoNac as idDistritoNa,idDistritoRec as idDistritoRe  from egresado where  estado='A')
+	as s1 inner join
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select distrito.idDistrito as idDistritoNac, 
+			provincia.idProvincia as idProvinciaNac,
+				departamento.idDepartamento as idDepartamentoNac,
+				departamento.descripcion as departamentoNac,
+				departamento.estado as estado1,
+			provincia.descripcion as provinciaNac,
+			provincia.estado as estado2,
+		distrito.descripcion as distritoNac,
+		distrito.estado as estado3
+        
+from distrito,provincia,departamento 
+
+where distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento) as s2 inner join
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select distrito.idDistrito as idDistritoRec , 
+			provincia.idProvincia as idProvinciaRec,
+				departamento.idDepartamento as idDepartamentoRec,
+				departamento.descripcion as departamentoRec,
+				departamento.estado as estado4,
+			provincia.descripcion as ProvinciaRec,
+			provincia.estado as estado5,
+		distrito.descripcion as distritoRec,
+		distrito.estado as estado6
+        
+        from distrito,provincia,departamento 
+        
+	where distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento ) as s3 inner join	
+ /*------------------------------------------------------------------------*/
+(select escuela.idEscuela , facultad.idFacultad, facultad.descripcion as descripcion1,
+facultad.estado as estado0, escuela.descripcion,escuela.estado as estado00
+ from escuela, facultad 
+
+where  escuela.idFacultad=facultad.idFacultad
+  ) as s4 inner join
+ /*------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------*/  
+(select idEgresado as idEgresadoo, nombres, apellidos,fechaNac,edad,dni, sexo, direccion,telefono1,telefono2,correo,anioIngreso,
+anioEgreso,nroHijos,estadoCivil,estado as estado10
+from egresado where   egresado.estado='A'  ) as s5 inner join
+/*-----------------------------------------------------------------------------------------------------------------------*/                
+(select idUsuarioEgresado as idUsuarioEgresados, usuario, estado from usuarioegresado where estado='A')as s6
+		on s0.idEgresado1=s1.idEgresado and 
+        s1.idDistritoNa=s2.idDistritoNac and 
+        s1.idDistritoRe=s3.idDistritoRec and 
+        s1.idEscuel=s4.idEscuela and
+        s0.idEgresado1=s5.idEgresadoo and 
+        s0.idUsuarioEgresado=s6.idUsuarioEgresados ;
+
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `sp_usuarioEgresado_bco` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -6883,7 +7040,7 @@ where  escuela.idFacultad=facultad.idFacultad
 (select nombres, apellidos,fechaNac,edad,dni, sexo, direccion,telefono1,telefono2,correo,anioIngreso,anioEgreso,nroHijos,estadoCivil,estado as estado10
 from egresado where idEgresado=(select idEgresado from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado) and  egresado.estado='A'  ) as s5,
 /*-----------------------------------------------------------------------------------------------------------------------*/                
-(select usuario,estado FROM   usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado  and estado='A')as s6;
+(select usuario,estado FROM   usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado and estado='A')as s6;
 end ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -6904,15 +7061,19 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuarioEgresado_modcontrasena`(
 			in VidUsuarioEgresado int(11),
 			in Vusuario varchar(45),
             in Vcontrasena varchar(45),
-            in Vcontrasenanew varchar(45)
+            in Vcontrasenanew varchar(45),
+             in Vcontrasenanew1 varchar(45)
 )
 begin
 	
 if ((select usuario from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado)=Vusuario and (CAST(AES_DECRYPT((select contrasena from usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado),'egresado2016') AS CHAR(50)))=Vcontrasena)then
+
+if(Vcontrasenanew=Vcontrasenanew1)then 
 update usuarioegresado set
 
 contrasena=AES_ENCRYPT(Vcontrasenanew,'egresado2016')
 where idUsuarioEgresado=VidUsuarioEgresado;
+
 
 
 select * from (SELECT idUsuarioEgresado FROM usuarioegresado where idUsuarioEgresado=VidUsuarioEgresado and estado='A') as s0,
@@ -6966,6 +7127,8 @@ from egresado where idEgresado=(select idEgresado from usuarioegresado where idU
 
 end if;
 
+end if;
+
 end ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -6985,14 +7148,19 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuarioEgresado_n`(
 			in VidEgresado int (11),
 			in Vusuario varchar(45),
-            in Vcontrasena varchar(45)
+            in Vcontrasena varchar(45),
+            in Vcontrasenanew varchar(45)
 )
 begin
 declare id integer;
-if not exists (select * from usuarioegresado where usuarioegresado.idEgresado=VidEgresado ) then
+if not exists (select * from usuarioegresado where usuarioegresado.idEgresado=VidEgresado  ) then
+if not exists (select * from usuarioegresado where usuario=Vusuario ) then
+if (Vcontrasena =Vcontrasenanew)then
 		insert into usuarioegresado(idEgresado,usuario,contrasena,estado)
 		values(VidEgresado,Vusuario,AES_ENCRYPT(Vcontrasena,'egresado2016'),'A');
         set id=last_insert_id();
+ end if; 
+ end if;
 end if;
 
 
@@ -7044,6 +7212,191 @@ where  escuela.idFacultad=facultad.idFacultad
 from egresado where idEgresado=VidEgresado and  egresado.estado='A'  ) as s5,
 /*-----------------------------------------------------------------------------------------------------------------------*/                
 (select usuario,estado FROM   usuarioegresado where idUsuarioEgresado=id and estado='A')as s6;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_usuarioEgresado_n1` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuarioEgresado_n1`(
+			in VidDistritoNac int (11),
+			in VidDistritoRec int (11),
+			in VidEscuela int(11),
+			in Vnombres varchar(45),
+			in Vapellidos varchar(45),
+			in VfechaNac date,
+
+			in Vdni char(8),
+			in Vsexo char(1),
+			in Vdireccion varchar(200),
+			in Vtelefono1 varchar(45),
+			in Vtelefono2 varchar(45),
+			in Vcorreo varchar(45),
+			in VanioIngreso char(4),
+			in VanioEgreso char(4),
+			in VnroHijos int(11),
+			in VestadoCivil char(2),
+			
+			in Vusuario varchar(45),
+            in Vcontrasena varchar(45),
+            in Vcontrasenanew varchar(45)
+)
+begin 
+declare id integer;
+declare id1 integer;
+declare Vedad integer;
+set Vedad=DATE_FORMAT(FROM_DAYS(TO_DAYS(NOW())-TO_DAYS(VfechaNac)), '%Y')+0;
+
+if not exists (select * from egresado where egresado.dni=Vdni and egresado.estado='A')then
+	if not exists (select * from usuarioegresado where usuario=Vusuario ) then
+
+		if (Vcontrasena =Vcontrasenanew)then
+				insert into egresado(idDistritoNac,idDistritoRec,idEscuela,nombres,
+						apellidos,fechaNac,edad,dni,sexo,direccion,telefono1,telefono2,correo,
+						anioIngreso,anioEgreso,nroHijos,estadoCivil,estado)
+				values(VidDistritoNac,VidDistritoRec,VidEscuela,Vnombres,
+						Vapellidos,VfechaNac, Vedad,
+                        Vdni,Vsexo,Vdireccion,Vtelefono1,Vtelefono2,Vcorreo,
+						VanioIngreso,VanioEgreso,VnroHijos,VestadoCivil,'A');
+				set id1=last_insert_id();
+                
+                insert into usuarioegresado(idEgresado,usuario,contrasena,estado)
+				values(id1,Vusuario,AES_ENCRYPT(Vcontrasena,'egresado2016'),'A');
+				set id=last_insert_id();
+        end if;
+	end if;
+end if;
+select * from (SELECT idUsuarioEgresado FROM usuarioegresado where idUsuarioEgresado=id and estado='A') as s0,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select idEgresado  from egresado where idEgresado=id1 and egresado.estado='A') as s1,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select distrito.idDistrito as idDistritoNac, 
+			provincia.idProvincia as idProvinciaNac,
+				departamento.idDepartamento as idDepartamentoNac,
+				departamento.descripcion as departamentoNac,
+				departamento.estado as estado1,
+			provincia.descripcion as provinciaNac,
+			provincia.estado as estado2,
+		distrito.descripcion as distritoNac,
+		distrito.estado as estado3
+        
+from distrito,provincia,departamento 
+
+where distrito.idDistrito=(select idDistritoNac from egresado where idEgresado=id1) and
+distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento) as s2,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select distrito.idDistrito as idDistritoRec , 
+			provincia.idProvincia as idProvinciaRec,
+				departamento.idDepartamento as idDepartamentoRec,
+				departamento.descripcion as departamentoRec,
+				departamento.estado as estado4,
+			provincia.descripcion as ProvinciaRec,
+			provincia.estado as estado5,
+		distrito.descripcion as distritoRec,
+		distrito.estado as estado6
+        
+        from distrito,provincia,departamento 
+        
+	where distrito.idDistrito=(select idDistritoRec from egresado where idEgresado=id1) and 
+distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento ) as s3,	
+/*------------------------------------------------------------------------*/
+(select escuela.idEscuela , facultad.idFacultad, facultad.descripcion as descripcion1,
+facultad.estado as estado0, escuela.descripcion,escuela.estado as estado00
+ from escuela, facultad ,egresado
+
+where  escuela.idFacultad=facultad.idFacultad
+ and egresado.idEscuela=escuela.idEscuela and egresado.idEgresado=id1) as s4,
+ /*------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------*/  
+(select nombres, apellidos,fechaNac,edad,dni, sexo, direccion,telefono1,telefono2,correo,anioIngreso,anioEgreso,nroHijos,estadoCivil,estado as estado10
+from egresado where idEgresado=id1 and  egresado.estado='A'  ) as s5,
+/*-----------------------------------------------------------------------------------------------------------------------*/                
+(select usuario,estado FROM   usuarioegresado where idUsuarioEgresado=id and estado='A')as s6;
+end ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `sp_usuarioEgresado_validar` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_usuarioEgresado_validar`(
+	in Vusuario varchar(45),
+        in Vcontrasena varchar(45)
+)
+begin
+select * from (SELECT idUsuarioEgresado FROM usuarioegresado where usuario=Vusuario and estado='A') as s0,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select idEgresado  from egresado where idEgresado=(select idEgresado from usuarioegresado where usuario=Vusuario ) and egresado.estado='A') as s1,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select distrito.idDistrito as idDistritoNac, 
+			provincia.idProvincia as idProvinciaNac,
+				departamento.idDepartamento as idDepartamentoNac,
+				departamento.descripcion as departamentoNac,
+				departamento.estado as estado1,
+			provincia.descripcion as provinciaNac,
+			provincia.estado as estado2,
+		distrito.descripcion as distritoNac,
+		distrito.estado as estado3
+        
+from distrito,provincia,departamento 
+
+where distrito.idDistrito=(select idDistritoNac from egresado where idEgresado=(select idEgresado from usuarioegresado where usuario=Vusuario )) and
+distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento) as s2,
+/*-----------------------------------------------------------------------------------------------------------------------*/
+(select distrito.idDistrito as idDistritoRec , 
+			provincia.idProvincia as idProvinciaRec,
+				departamento.idDepartamento as idDepartamentoRec,
+				departamento.descripcion as departamentoRec,
+				departamento.estado as estado4,
+			provincia.descripcion as ProvinciaRec,
+			provincia.estado as estado5,
+		distrito.descripcion as distritoRec,
+		distrito.estado as estado6
+        
+        from distrito,provincia,departamento 
+        
+	where distrito.idDistrito=(select idDistritoRec from egresado where idEgresado=(select idEgresado from usuarioegresado where usuario=Vusuario )) and 
+distrito.idProvincia=provincia.idProvincia and 
+provincia.idDepartamento=departamento.idDepartamento ) as s3,	
+/*------------------------------------------------------------------------*/
+(select escuela.idEscuela , facultad.idFacultad, facultad.descripcion as descripcion1,
+facultad.estado as estado0, escuela.descripcion,escuela.estado as estado00
+ from escuela, facultad ,egresado
+
+where  escuela.idFacultad=facultad.idFacultad
+ and egresado.idEscuela=escuela.idEscuela and egresado.idEgresado=(select idEgresado from usuarioegresado where usuario=Vusuario )) as s4,
+ /*------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------*/  
+(select nombres, apellidos,fechaNac,edad,dni, sexo, direccion,telefono1,telefono2,correo,anioIngreso,anioEgreso,nroHijos,estadoCivil,estado as estado10
+from egresado where idEgresado=(select idEgresado from usuarioegresado where usuario=Vusuario ) and  egresado.estado='A'  ) as s5,
+/*-----------------------------------------------------------------------------------------------------------------------*/                
+(select usuario,estado FROM   usuarioegresado where  usuario =Vusuario  and
+ CAST(AES_DECRYPT(contrasena, 'egresado2016') AS CHAR(50))=Vcontrasena  and estado='A')as s6;
+
+
+ 
 end ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -7180,4 +7533,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-26  2:04:07
+-- Dump completed on 2018-05-29 16:54:54
