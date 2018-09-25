@@ -40,9 +40,7 @@ http://www.templatemo.com/free-website-templates/
         <li><a href="#home" class="smoothScroll">INICIO</a></li>
         <li><a href="#service" class="smoothScroll">SERVICIO</a></li>
         <li><a href="#about" class="smoothScroll">EQUIPO</a></li>
-        <li><a href="#portfolio" class="smoothScroll">FOTOS</a></li>
-        
-        <li><a href="#contact" class="smoothScroll">CANTACTENOS</a></li>
+        <li><a href="#contact" class="smoothScroll">RESPONSABLES</a></li>
       </ul>
     </div>
   </div>
@@ -52,10 +50,10 @@ http://www.templatemo.com/free-website-templates/
   <div class="container">
     <div class="row">
       <div class="col-md-offset-6 col-md-6 col-sm-offset-6 col-sm-6">
-        <h2>Bienvenidos al</h2>
-        <h1>Proyecto <strong>"Evaluación y Análisis del estado situacional de los egresados de la UNIA, para mejorar su inserción al campo laboral"</strong></h1>
+        <h2></h2>
+        <h1><strong>"Evaluación y Análisis del estado situacional de los egresados de la UNIA, para mejorar su inserción al campo laboral"</strong></h1>
         
-        <a href="Encuesta.jsp"  class="btn btn-default smoothScroll">Encuesta</a></div>
+        <a href="Encuesta.jsp"  class="btn btn-default smoothScroll">Ingrese Aqui</a></div>
     </div>
   </div>
 </div>
@@ -130,7 +128,7 @@ http://www.templatemo.com/free-website-templates/
   </div>
 </div>
 <!-- team section -->
-<div id="team">
+<div id="contact">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12">

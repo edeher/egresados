@@ -64,11 +64,16 @@
         EstadisticaDAOFactory fabricate = new EstadisticaDAOFactory();
         EstadisticaDAO daote = fabricate.metodoDAO();
 
+        int resta=0;
+
         Estadistica obj1 = daote.nroegresados();
+        Estadistica obj11=daote.nroegresadoscongrados();
         Estadistica obj2 = daote.nrobachilleres();
         Estadistica obj3 = daote.nrotitulados();
         Estadistica obj4 =daote.nro_encuestados();
-Estadistica obj5 =daote.nro_no_encuestados();
+        Estadistica obj5 =daote.nro_no_encuestados();
+        
+        resta=obj1.getValor()-obj11.getValor();
 
     %>
 
@@ -116,7 +121,7 @@ Estadistica obj5 =daote.nro_no_encuestados();
                         <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
                             <div class="left"></div>
                             <div class="right">
-                                <span class="count_top"><i class="fa fa-user"></i> Total Egresados</span>
+                                <span class="count_top"><i class="fa fa-user"></i> Total Encuestados</span>
 
                                 <div class="count"><%=obj1.getValor()%></div>
                             </div>
@@ -138,6 +143,14 @@ Estadistica obj5 =daote.nro_no_encuestados();
                                 <div class="count"><%=obj3.getValor()%></div>
                             </div>
                         </div>
+                              <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
+                            <div class="left"></div>
+                            <div class="right">
+                                <span class="count_top"><i class="fa fa-send"></i> Total Egresados</span>
+
+                                <div class="count red"><%=resta%></div>
+                            </div>
+                        </div> 
                         <div class="animated flipInY col-md-2 col-sm-4 col-xs-4 tile_stats_count">
                             <div class="left"></div>
                             <div class="right">

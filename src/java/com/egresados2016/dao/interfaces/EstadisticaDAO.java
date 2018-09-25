@@ -22,6 +22,7 @@ public interface EstadisticaDAO {
     public Estadistica [] nro_preguntas_all_egresado() throws DAOException;
     
      public Estadistica  nroegresados() throws DAOException;
+     public Estadistica  nroegresadoscongrados() throws DAOException;
      public Estadistica  nrobachilleres() throws DAOException;
      public Estadistica  nrotitulados() throws DAOException;
      public Estadistica  nro_preguntas_por_egresado(int idEgresado) throws DAOException;

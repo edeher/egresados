@@ -1351,6 +1351,32 @@ private final Connection con;
         }     
     }
 
+    @Override
+    public Estadistica nroegresadoscongrados() throws DAOException {
+       try{
+        CallableStatement st=con.prepareCall("{call sp_nro_egresadoscongrados()}");
+          
+              ResultSet rs = st.executeQuery();
+            if (!rs.next()) {
+                return null;
+            }
+           
+            return (
+                      new Estadistica(
+                                                        
+                            rs.getString("descripcion"),                      
+                                                
+                            rs.getInt("cantidad")
+                )
+                         
+                   );
+            
+        } catch (SQLException se) {
+            
+            throw new DAOException("Error buscando numero de egresados con grados en DAO", se);
+        } 
+    }
+
     
     
 }
